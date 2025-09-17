@@ -29,12 +29,12 @@ stations2:
     url: '/images/qt05_LaPoma_lr.jpg'
   - image_path: /images/06_SantaMaria.jpg
     alt: 06-Santa Maria
-    btn_label: 06-Santa Maria
-    url: '/images/06_SantaMaria.jpg/'
+    btn_label: 06-Santa María
+    url: '/images/06_SantaMaría.jpg/'
 stations3:
   - image_path: /images/07_LosCardones.jpg
-    alt: 07-Los Cardones
-    btn_label: 07-Los Cardones
+    alt: 07-Parque Nacional Los Cardones
+    btn_label: 07-Parque Nacional Los Cardones
     url: '/images/07_LosCardones.jpg'
   - image_path: /images/08_Alfarcito.jpg
     btn_label: 08-Alfarcito
@@ -53,10 +53,10 @@ stations4:
     btn_label: 11-Salar Llullaillaco
     alt: 11-Salar Llullaillaco
     url: '/images/11_SalarLlullaillaco.jpg'
-  - image_path: /images/12_Metan.jpg
-    alt: 12-San Jose de Metan
-    btn_label: 12-San Jose de Metan
-    url: '/images/12_Metan.jpg'
+  - image_path: /images/12_Galpon.jpg
+    alt: 12-El Galpón
+    btn_label: 12-El Galpón
+    url: '/images/12_Galpon.jpg'
 
 ---
 

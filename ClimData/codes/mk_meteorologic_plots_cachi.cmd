@@ -19,7 +19,7 @@ cd /raid/nwarg/vacon.github.io/ClimData/
 python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt05/ "La Poma" 05_LaPoma /raid/nwarg/vacon.github.io/ClimData/
 
 cd /raid/nwarg/vacon.github.io/ClimData/
-python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt06/ "Santa Maria" 06_SantaMaria /raid/nwarg/vacon.github.io/ClimData/
+python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt06/ "Santa María" 06_SantaMaria /raid/nwarg/vacon.github.io/ClimData/
 
 cd /raid/nwarg/vacon.github.io/ClimData/
 python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt07/ "Parque Nacional Los Cardones" 07_LosCardones /raid/nwarg/vacon.github.io/ClimData/

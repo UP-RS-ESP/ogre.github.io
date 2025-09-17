@@ -27,8 +27,8 @@ stations2:
     alt: 05-La Poma
     url: '/ClimData/05_LaPoma_TempP_last10days.png'
   - image_path: /ClimData/06_SantaMaria_TempP_last10days.png
-    alt: 06-Santa Maria
-    btn_label: 06-Santa Maria
+    alt: 06-Santa María
+    btn_label: 06-Santa María
     url: '/ClimData/06_SantaMaria_TempP_last10days.png'
 stations3:
   - image_path: /ClimData/07_LosCardones_TempP_last10days.png
