@@ -1,9 +1,9 @@
 # main links
 main:
-  - title: "Climate Data"
+  - title: "Climate"
     url: /ClimData/
 
-  - title: "GNSS Data"
+  - title: "GNSS"
     url: /GNSSData/
 
   - title: "Hardware"

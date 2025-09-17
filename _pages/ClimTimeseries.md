@@ -32,8 +32,8 @@ stations2:
     url: '/ClimData/06_SantaMaria_TempP_last10days.png'
 stations3:
   - image_path: /ClimData/07_LosCardones_TempP_last10days.png
-    alt: 07-Los Cardones
-    btn_label: 07-Los Cardones
+    alt: 07-Parque Nacional Los Cardones
+    btn_label: 07-Parque Nacional Los Cardones
     url: '/ClimData/07_LosCardones_TempP_last10days.png'
   - image_path: /ClimData/07_LosCardones_TempP_last10days.png
     btn_label: 08-Alfarcito
@@ -52,10 +52,10 @@ stations4:
     btn_label: 11-Salar Llullaillaco
     alt: 11-Salar Llullaillaco
     url: '/ClimData/11_SalarLlullaillaco_TempP_last10days.png'
-  - image_path: /ClimData/12_Metan_TempP_last10days.png
-    alt: 12-San Jose de Metan
-    btn_label: 12-San Jose de Metan
-    url: '/ClimData/12_Metan_TempP_last10days.png'
+  - image_path: /ClimData/12_Galpon_TempP_last10days.png
+    alt: 12-El Galpón
+    btn_label: 12-El Galpón
+    url: '/ClimData/12_Galpon_TempP_last10days.png'
 
 ---
 

@@ -22,7 +22,7 @@ cd /raid/nwarg/vacon.github.io/ClimData/
 python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt06/ "Santa Maria" 06_SantaMaria /raid/nwarg/vacon.github.io/ClimData/
 
 cd /raid/nwarg/vacon.github.io/ClimData/
-python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt07/ "Las Cardones" 07_LosCardones /raid/nwarg/vacon.github.io/ClimData/
+python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt07/ "Parque Nacional Los Cardones" 07_LosCardones /raid/nwarg/vacon.github.io/ClimData/
 
 cd /raid/nwarg/vacon.github.io/ClimData/
 python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt08/ Alfarcito 08_Alfarcito /raid/nwarg/vacon.github.io/ClimData/
@@ -37,5 +37,5 @@ cd /raid/nwarg/vacon.github.io/ClimData/
 python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt11/ "Salar Llullaillaco" 11_SalarLlullaillaco /raid/nwarg/vacon.github.io/ClimData/
 
 cd /raid/nwarg/vacon.github.io/ClimData/
-python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt12/ "San Jose de Metan" 12_Metan /raid/nwarg/vacon.github.io/ClimData/
+python3 /raid/nwarg/vacon.github.io/ClimData/codes/read_meteorologic_data.py /raid/nwarg/vacon/clim_data/qt12/ "El Galpón" 12_Galpon /raid/nwarg/vacon.github.io/ClimData/
 
