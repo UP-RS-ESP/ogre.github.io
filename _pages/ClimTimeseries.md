@@ -59,7 +59,7 @@ stations4:
 
 ---
 
-Click on figure label to enlarge.
+Click on figure label to enlarge. Only last 10 days of data are shown.
 
 
 {% include feature_row id="stations1" type=center%}
