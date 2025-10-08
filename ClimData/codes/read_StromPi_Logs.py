@@ -276,7 +276,7 @@ def plot_single_StromPiLog():
     #     fontsize=16,
     #     fontweight="bold",
     # )
-    fg.savefig("ClimData/StromPi_last10days_last1year.png", dpi=300)
+    fg.savefig("StromPi_last10days_last1year.png", dpi=300)
     plt.close(fg)
 
 
