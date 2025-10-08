@@ -14,4 +14,5 @@ All software was developed at the University of Potsdam.
 
 {% include figure popup=true image_path="/images/09_SAdelosCobres_hardware_closed.jpg" alt="this is a placeholder image" caption="We house the hardware in multiple enclosures to ensure safe operation, and include a 12V backup battery to maintain functionality during power outages." %}
 
+{% include figure popup=true image_path="/ClimData/StromPi_last10days_last1year.png" alt="this is a placeholder image" caption="Battery Status" %}
 
