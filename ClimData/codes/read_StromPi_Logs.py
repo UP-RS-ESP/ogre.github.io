@@ -63,7 +63,7 @@ def plot_all_StromPiLog():
         ),
         labels=station_name_unique,
     )
-    ax.set_ylabel(r"Voltage (Wide) (V)", fontsize=14, fontweight="bold")
+    ax.set_ylabel(r"normalized Voltage (Wide)", fontsize=14, fontweight="bold")
     # ax.legend(prop={"size": 14})
     date_form = DateFormatter("%b-%d")
     date_form.set_tzinfo(gettz("GMT"))
@@ -135,7 +135,7 @@ def plot_all_StromPiLog():
         ),
         labels=station_name_unique,
     )
-    ax.set_ylabel(r"Voltage (Wide) (V)", fontsize=14, fontweight="bold")
+    ax.set_ylabel(r"normalized Voltage (Wide)", fontsize=14, fontweight="bold")
     # ax.legend(prop={"size": 14})
     date_form = DateFormatter("%b-%d")
     date_form.set_tzinfo(gettz("GMT"))
@@ -207,7 +207,7 @@ def plot_single_StromPiLog():
         ),
         labels=station_name_unique,
     )
-    ax1.set_ylabel(r"Voltage (Wide) (V)", fontsize=14, fontweight="bold")
+    ax1.set_ylabel(r"normalized Voltage (Wide)", fontsize=14, fontweight="bold")
     # ax1.legend(prop={"size": 14})
     date_form = DateFormatter("%b-%d")
     date_form.set_tzinfo(gettz("GMT"))
@@ -252,7 +252,7 @@ def plot_single_StromPiLog():
         ),
         labels=station_name_unique,
     )
-    ax2.set_ylabel(r"Voltage (Wide) (V)", fontsize=14, fontweight="bold")
+    ax2.set_ylabel(r"normalized Voltage (Wide)", fontsize=14, fontweight="bold")
     # ax2.legend(prop={"size": 14})
     date_form = DateFormatter("%b-%d")
     date_form.set_tzinfo(gettz("GMT"))
