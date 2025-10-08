@@ -6,6 +6,9 @@ main:
   - title: "GNSS"
     url: /GNSSData/
 
+  - title: "Battery Status"
+    url: /BatteryStatus/
+
   - title: "Hardware"
     url: /Hardware/
 

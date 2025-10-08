@@ -324,7 +324,6 @@ compress_html:
   ignore:
     envs: development
 
-
 # Defaults
 defaults:
   # _ClimData
@@ -342,6 +341,17 @@ defaults:
   - scope:
       path: ""
       type: pages
+    values:
+      layout: splash
+      author_profile: false
+      read_time: false
+      comments: # true
+      share: true
+      related: true
+  # _BatteryStatus
+  - scope:
+      path: ""
+      type: posts
     values:
       layout: splash
       author_profile: false
