@@ -10,6 +10,8 @@ import matplotlib.dates as mdates
 from dateutil.tz import gettz
 import datetime
 
+pd.options.mode.chained_assignment = None  # default='warn'
+
 
 def plot_all_StromPiLog():
     fg, ax = plt.subplots(
@@ -70,10 +72,10 @@ def plot_all_StromPiLog():
     ax.xaxis.set_minor_locator(mdates.HourLocator(interval=12))
     ax.tick_params(axis="both", which="major", labelsize=14)
     # start with 10 day history
-    start_time = now - np.timedelta64(10, "D")
-    start_time.replace(hour=0, minute=0, second=0, microsecond=0)
+    start_time = now - datetime.timedelta(days=10)  # np.timedelta64(10, "D")
+    start_time = start_time.replace(hour=0, minute=0, second=0, microsecond=0)
     end_time = now
-    end_time.replace(hour=23, minute=59, second=59, microsecond=0)
+    end_time = end_time.replace(hour=23, minute=59, second=59, microsecond=0)
     ax.set_xlim([start_time, end_time])
     ax.set_title(
         "10-day battery voltage history of VACON network: %s to %s"
@@ -140,10 +142,10 @@ def plot_all_StromPiLog():
     ax.xaxis.set_major_formatter(date_form)
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
     ax.tick_params(axis="both", which="major", labelsize=14)
-    start_time = now - np.timedelta64(365, "D")
-    start_time.replace(hour=0, minute=0, second=0, microsecond=0)
+    start_time = now - datetime.timedelta(days=365)  # np.timedelta64(10, "D")
+    start_time = start_time.replace(hour=0, minute=0, second=0, microsecond=0)
     end_time = now
-    end_time.replace(hour=23, minute=59, second=59, microsecond=0)
+    end_time = end_time.replace(hour=23, minute=59, second=59, microsecond=0)
     ax.set_xlim([start_time, end_time])
     ax.set_title(
         "1-year battery voltage history for VACON network: %s to %s"
@@ -179,7 +181,7 @@ def plot_single_StromPiLog():
         "black",
     ]
     now = datetime.datetime.now()
-    now.replace(hour=0, minute=0, second=0, microsecond=0)
+    now = now.replace(hour=0, minute=0, second=0, microsecond=0)
     for i in range(len(station_name_unique)):
         cstation_name = station_name_unique[i]
         df = df_all[df_all["StationName"] == cstation_name]
@@ -214,10 +216,10 @@ def plot_single_StromPiLog():
     ax1.xaxis.set_minor_locator(mdates.HourLocator(interval=12))
     ax1.tick_params(axis="both", which="major", labelsize=14)
     # start with 10 day history
-    start_time = now - np.timedelta64(10, "D")
-    start_time.replace(hour=0, minute=0, second=0, microsecond=0)
+    start_time = now - datetime.timedelta(days=10)  # np.timedelta64(10, "D")
+    start_time = start_time.replace(hour=0, minute=0, second=0, microsecond=0)
     end_time = now
-    end_time.replace(hour=23, minute=59, second=59, microsecond=0)
+    end_time = end_time.replace(hour=23, minute=59, second=59, microsecond=0)
     ax1.set_xlim([start_time, end_time])
     ax1.set_xlabel(
         "Date (%s to %s)"
@@ -257,10 +259,10 @@ def plot_single_StromPiLog():
     ax2.xaxis.set_major_formatter(date_form)
     ax2.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
     ax2.tick_params(axis="both", which="major", labelsize=14)
-    start_time = now - np.timedelta64(365, "D")
-    start_time.replace(hour=0, minute=0, second=0, microsecond=0)
+    start_time = now - datetime.timedelta(days=365)  # np.timedelta64(10, "D")
+    start_time = start_time.replace(hour=0, minute=0, second=0, microsecond=0)
     end_time = now
-    end_time.replace(hour=23, minute=59, second=59, microsecond=0)
+    end_time = end_time.replace(hour=23, minute=59, second=59, microsecond=0)
     ax2.set_xlim([start_time, end_time])
     ax2.set_xlabel(
         "Date (%s to %s)"
@@ -295,7 +297,7 @@ dfs2 = []
 for i in range(len(filelists)):
     dfs = []
     filelist = filelists[i]
-    for name in tqdm.tqdm(filelist):
+    for name in tqdm.tqdm(filelist, desc=str(station_name[i]).upper()):
         # 2024-01-13 05:30:02 Wide: 2.775 V, BAT: 3.493 V, USB: 5.160 V, OUTPUT: 5.150 V
         df = pd.read_csv(
             name,
@@ -337,8 +339,8 @@ for i in range(len(filelists)):
             ],
             inplace=True,
         )
-        dfs.append(df)
-
+        cols_to_keep1 = [col for col in df.columns if not df[col].isnull().all()]
+        dfs.append(df[cols_to_keep1])
     df_all = pd.concat(dfs, ignore_index=True)
     df_all.set_index("date", inplace=True)
     df_all.sort_index(ascending=True, inplace=True)
