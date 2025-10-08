@@ -1,6 +1,6 @@
 ---
 title: Battery Status
-permalink: /BatteryStaus/
+permalink: /BatteryStatus/
 author_profile: false
 layout: splash
 ---

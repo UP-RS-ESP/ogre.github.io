@@ -1,5 +1,5 @@
-#cd /home/bodo/vacon.github.io
-cd /raid/nwarg/vacon.github.io
+cd /home/bodo/vacon.github.io
+#cd /raid/nwarg/vacon.github.io
 mkdir ../vacon_foo
 mv ClimData/*.png ../vacon_foo
 git pull
