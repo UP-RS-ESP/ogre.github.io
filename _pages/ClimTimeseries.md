@@ -56,11 +56,15 @@ stations4:
     alt: 12-El Galpón
     btn_label: 12-El Galpón
     url: '/ClimData/12_Galpon_TempP_last10days.png'
+stations5:
+  - image_path: /ClimData/17_Pozuelos_TempP_last10days.png
+    alt: 17-Laguna de los Pozuelos
+    btn_label: 17-Laguna de los Pozuelos
+    url: '/ClimData/17_Pozuelos_TempP_last10days.png'
 
 ---
 
 Click on figure label to enlarge. Only last 10 days of data are shown.
-
 
 {% include feature_row id="stations1" type=center%}
 
@@ -70,3 +74,4 @@ Click on figure label to enlarge. Only last 10 days of data are shown.
 
 {% include feature_row id="stations4" type=center%}
 
+{% include feature_row id="stations5" type=center%}

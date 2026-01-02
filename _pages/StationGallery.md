@@ -57,6 +57,12 @@ stations4:
     alt: 12-El Galpón
     btn_label: 12-El Galpón
     url: '/images/12_Galpon.jpg'
+stations5:
+  - image_path: /images/17_LagunadelosPozuelos.jpg
+    alt: 17-Laguna de los Pozuelos
+    btn_label: 17-Laguna de los Pozuelos
+    url: '/images/17_LagunadelosPozuelos.jpg'
+
 
 ---
 
@@ -68,3 +74,4 @@ stations4:
 
 {% include feature_row id="stations4" type=center%}
 
+{% include feature_row id="stations5" type=center%}
