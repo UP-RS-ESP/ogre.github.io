@@ -1,8 +1,8 @@
-cd /raid/nwarg/vacon.github.io
-mkdir ../vacon_foo
-mv ClimData/*.png ../vacon_foo
+cd /raid/nwarg/tron.github.io
+mkdir ../tron_foo
+mv ClimData/*.png ../tron_foo
 git pull
-mv ../vacon_foo/*.png ClimData
-rm -fr ../vacon_foo
+mv ../tron_foo/*.png ClimData
+rm -fr ../tron_foo
 #bundle exec jekyll build
 #JEKYLL_ENV=production bundle exec jekyll build
