@@ -2,12 +2,12 @@
 layout: splash
 search: false
 permalink: /
-title: "VACON"
+title: "TRON"
 author_profile: false
 redirect_from:
   - /about/
   - /about.html
-excerpt: "VACON - The *VAlles Calchaquíes Observatory Network* is a network of continuous GNSS stations and meteorological instruments in Northwestern Argentina. "
+excerpt: "TRON - The *The Trishuli River Observation Network* is a network of continuous GNSS stations and meteorological instruments in the Nepal."
 header:
   overlay_image: images/04_Angastaco.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
@@ -21,4 +21,4 @@ The VACON network serves several scientific purposes:
   - High-resolution meteorological observations are used to capture and analyze rapid weather variations.
   - GNSS measurements are processed to estimate integrated water vapor, enabling the study of three-dimensional water-vapor transport.
 
-Contact [Bodo Bookhagen](mailto:bodo.bookhagen@uni-potsdam.de) with questions.
+Contact [Taylor Smith](mailto:tsmith@uni-potsdam.de) and [Bodo Bookhagen](mailto:bodo.bookhagen@uni-potsdam.de) with questions.

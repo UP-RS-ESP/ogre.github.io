@@ -17,14 +17,14 @@ minimal_mistakes_skin    : "contrast" #"default" # "air", "aqua", "contrast", "d
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "VACON"
+title                    : "TRON"
 title_separator          : "-"
-subtitle                 : "VAlles Calchaquíes Observatory Network" # site tagline that appears below site title in masthead
+subtitle                 : "Trishuli River Observation Network" # site tagline that appears below site title in masthead
 name                     : "Bodo Bookhagen"
-description              : "GNSS and meteorological data from the Central Andes"
+description              : "GNSS and meteorological data from central Nepal"
 url                      : "https://up-rs-esp-3.geo.uni-potsdam.de"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "up-rs-esp/VACON.github" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "up-rs-esp/TRON.github" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/images/bodo-logo1_auf-weiss_rgb.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -107,7 +107,7 @@ social:
 analytics:
   provider               : "google-gtag" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          : "G-911W5GPXCZ"
+    tracking_id          : "G-RZLSH5TRMD"
     anonymize_ip         : true # true, false (default)
 
 # Site Author
