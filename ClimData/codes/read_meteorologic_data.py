@@ -50,8 +50,8 @@ for name in tqdm.tqdm(filelist):
 
 df_all = pd.concat(dfs, ignore_index=True)
 df_all.set_index("date", inplace=True)
-df_all.T1.drop(df_all[df_all.T1 < -40].index, inplace=True)
-df_all.T2.drop(df_all[df_all.T2 < -40].index, inplace=True)
+df_all.T1_C.drop(df_all[df_all.T1_C < -40].index, inplace=True)
+df_all.T2_C.drop(df_all[df_all.T2_C < -40].index, inplace=True)
 df_all.drop(df_all[df_all.nr_meas < 5].index, inplace=True)
 df_all.drop(df_all[df_all.T1_C_sd > 1].index, inplace=True)
 df_all.drop(df_all[df_all.P_hpa_sd > 2].index, inplace=True)
