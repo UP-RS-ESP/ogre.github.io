@@ -26,10 +26,10 @@ stations2:
     btn_label: "05-Dhunche Nepal Electricity Authority"
     alt: 05-Dhunche Nepal Electricity Authority
     url: '/ClimData/05_Dhunche_TempP_last10days.png'
-  - image_path: /ClimData/06_SanjenHW_TempP_last10days.png
+  - image_path: /ClimData/06_Sanjen2_TempP_last10days.png
     alt: 06-Sanjen Hydropower Headwater
     btn_label: "06-Sanjen Hydropower Headwater"
-    url: '/ClimData/06_SanjenHW_TempP_last10days.png'
+    url: '/ClimData/06_Sanjen2_TempP_last10days.png'
 stations3:
   - image_path: /ClimData/07_Trishuli3APH_TempP_last10days.png
     alt: 07-Trishuli 3A Power House
