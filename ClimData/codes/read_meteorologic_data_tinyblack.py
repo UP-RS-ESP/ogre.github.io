@@ -3,6 +3,7 @@
 import numpy as np
 import pandas as pd
 import os, glob, tqdm, sys
+import py7zr
 import matplotlib
 
 matplotlib.use("Agg")
@@ -17,47 +18,41 @@ station_name = sys.argv[2]
 file_prefix = sys.argv[3]
 output_path = sys.argv[4]
 
-filelist1 = glob.glob(os.path.join(data_path, "*/*.gz"))
-filelist2 = glob.glob(os.path.join(data_path, "*.gz"))
-filelist = filelist1 + filelist2
+filelist = glob.glob(os.path.join(data_path, "%s*.??m.7z" % station_name))
 filelist.sort()
 
+print("reading %s" % data_path)
+filelist = glob.glob(os.path.join(data_path, "%s*.??m.7z" % station_name))
 dfs = []
-for name in tqdm.tqdm(filelist):
+for i in tqdm.tqdm(range(len(filelist))):
+    if not os.path.exists(filelist[i][:-3]):
+        if os.path.getsize(filelist[i]) == 0:
+            print("File is empty %s" % filelist[i])
+            continue
+        with py7zr.SevenZipFile(filelist[i], "r") as archive:
+            archive.extractall(path=os.path.dirname(filelist[i]))
+    #    if os.path.getsize(filelist[i][:-3]) < 900:
+    #        print('File is small %s'%filelist[i][:-3])
+    #        continue
+
     df = pd.read_csv(
-        name,
-        sep=",",
+        filelist[i][:-3],
+        sep=" ",
         skipinitialspace=True,
-        skiprows=1,
+        skiprows=9,
+        on_bad_lines="skip",
         skip_blank_lines=True,
-        names=[
-            "date",
-            "T1_C",
-            "T1_C_sd",
-            "T2_C",
-            "T2_C_sd",
-            "rh",
-            "rh_sd",
-            "P_hpa",
-            "P_hpa_sd",
-            "Elev_m",
-            "Elev_m_sd",
-            "nr_meas",
-        ],
+        names=["year", "month", "day", "h", "m", "s", "P_hpa", "T_C", "rh"],
     )
-    df["date"] = pd.to_datetime(df["date"], utc=True, format="ISO8601")
+    df["year"] += 2000
+
+    df["date"] = pd.to_datetime(df[["year", "month", "day", "h", "m", "s"]], utc=True)
+    df.drop(columns=["year", "month", "day", "h", "m", "s"], inplace=True)
     dfs.append(df)
 
 df_all = pd.concat(dfs, ignore_index=True)
 df_all.set_index("date", inplace=True)
-df_all.T1.drop(df_all[df_all.T1 < -40].index, inplace=True)
-df_all.T2.drop(df_all[df_all.T2 < -40].index, inplace=True)
-df_all.drop(df_all[df_all.nr_meas < 5].index, inplace=True)
-df_all.drop(df_all[df_all.T1_C_sd > 1].index, inplace=True)
-df_all.drop(df_all[df_all.P_hpa_sd > 2].index, inplace=True)
-df_all.drop(df_all[df_all.T2_C_sd > 1].index, inplace=True)
-df_all.drop(df_all[df_all.rh_sd > 5].index, inplace=True)
-df_all.drop(df_all[df_all.rh_sd > 5].index, inplace=True)
+df_all.T_C.drop(df_all[df_all.T_C < -40].index, inplace=True)
 df_all.sort_index(ascending=True, inplace=True)
 # Drop NaT rows
 df_all["TMP"] = df_all.index.values  # index is a DateTimeIndex
@@ -72,7 +67,7 @@ end_time = np.max(df_all.index)
 end_time.replace(hour=23, minute=59, second=59, microsecond=0)
 mask = (df_all.index > start_time) & (df_all.index <= end_time)
 df_all = df_all.loc[mask]
-df_all = df_all.resample("1Min").mean()
+df_all = df_all.resample("5Min").mean()
 
 df_all["rh_30m_rolling_average"] = df_all["rh"].rolling("30Min").mean()
 df_all["P_hpa_30m_rolling_average"] = df_all["P_hpa"].rolling("30Min").mean()
@@ -80,27 +75,15 @@ df_all["P_hpa_30m_rolling_average"] = df_all["P_hpa"].rolling("30Min").mean()
 fg, ax = plt.subplots(
     nrows=2, ncols=1, figsize=(12, 10), dpi=300, layout="constrained", sharex=True
 )
-ax[0].errorbar(
-    x=df_all.index,
-    y=df_all["T1_C"],
-    yerr=df_all["T1_C_sd"],
+ax[0].plot(
+    df_all.index,
+    df_all["T_C"],
     linestyle="-",
     marker="o",
     ms=1,
     lw=0.5,
     color="navy",
-    label="T1 (outside)",
-)
-ax[0].errorbar(
-    x=df_all.index,
-    y=df_all["T2_C"],
-    yerr=df_all["T2_C_sd"],
-    linestyle="",
-    marker="o",
-    ms=1,
-    lw=0.5,
-    color="darkred",
-    label="T2 (inside)",
+    label="T (outside)",
 )
 ax[0].grid()
 ax[0].set_ylabel(r"Temperature ($^\circ$C)", fontsize=14, fontweight="bold")
@@ -115,18 +98,16 @@ ax[0].set_xlim([start_time, end_time])
 #     "%s: 1-minute logging interval, temperature" % station_name, fontsize=16
 # )
 ax1b = ax[1].twinx()
-lns1 = ax[1].errorbar(
-    x=df_all.index,
-    y=df_all["P_hpa"],
-    yerr=df_all["P_hpa_sd"],
+lns1 = ax[1].plot(
+    df_all.index,
+    df_all["P_hpa"],
     linestyle="",
     lw=0.5,
     color="lightgreen",
 )
-lns2 = ax1b.errorbar(
-    x=df_all.index,
-    y=df_all["rh"],
-    yerr=df_all["rh_sd"],
+lns2 = ax1b.plot(
+    df_all.index,
+    df_all["rh"],
     linestyle="",
     lw=0.5,
     color="violet",
