@@ -18,11 +18,9 @@ station_name = sys.argv[2]
 file_prefix = sys.argv[3]
 output_path = sys.argv[4]
 
-filelist = glob.glob(os.path.join(data_path, "%s*.??m.7z" % station_name))
+filelist = glob.glob(os.path.join(data_path, "npa*.??m.7z"))
 filelist.sort()
 
-print("reading %s" % data_path)
-filelist = glob.glob(os.path.join(data_path, "%s*.??m.7z" % station_name))
 dfs = []
 for i in tqdm.tqdm(range(len(filelist))):
     if not os.path.exists(filelist[i][:-3]):
