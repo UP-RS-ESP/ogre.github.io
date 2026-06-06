@@ -78,7 +78,7 @@ def plot_all_StromPiLog():
     end_time = end_time.replace(hour=23, minute=59, second=59, microsecond=0)
     ax.set_xlim([start_time, end_time])
     ax.set_title(
-        "10-day battery voltage history of VACON network: %s to %s"
+        "10-day battery voltage history of TRON network: %s to %s"
         % (start_time.strftime("%Y-%m-%d"), end_time.strftime("%Y-%m-%d")),
         fontsize=16,
         fontweight="bold",
@@ -148,7 +148,7 @@ def plot_all_StromPiLog():
     end_time = end_time.replace(hour=23, minute=59, second=59, microsecond=0)
     ax.set_xlim([start_time, end_time])
     ax.set_title(
-        "1-year battery voltage history for VACON network: %s to %s"
+        "1-year battery voltage history for TRON network: %s to %s"
         % (start_time.strftime("%Y-%m-%d"), end_time.strftime("%Y-%m-%d")),
         fontsize=16,
         fontweight="bold",
@@ -273,7 +273,7 @@ def plot_single_StromPiLog():
         fontweight="bold",
     )
     # ax2.set_title(
-    #     "1-year battery voltage history for VACON network: %s to %s"
+    #     "1-year battery voltage history for TRON network: %s to %s"
     #     % (start_time.strftime("%Y-%m-%d"), end_time.strftime("%Y-%m-%d")),
     #     fontsize=16,
     #     fontweight="bold",
