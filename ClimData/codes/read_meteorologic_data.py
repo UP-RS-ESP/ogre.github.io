@@ -12,6 +12,9 @@ from matplotlib.dates import AutoDateLocator
 import matplotlib.dates as mdates
 from dateutil.tz import gettz
 
+plt.rcParams["axes.facecolor"] = "#eeeeee"
+plt.rcParams["figure.facecolor"] = "#eeeeee"
+
 data_path = sys.argv[1]
 station_name = sys.argv[2]
 file_prefix = sys.argv[3]
