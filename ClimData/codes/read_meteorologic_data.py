@@ -50,8 +50,8 @@ for name in tqdm.tqdm(filelist):
 
 df_all = pd.concat(dfs, ignore_index=True)
 df_all.set_index("date", inplace=True)
-df_all.T1_C.drop(df_all[df_all.T1_C < -40].index, inplace=True)
-df_all.T2_C.drop(df_all[df_all.T2_C < -40].index, inplace=True)
+# df_all.T1_C.drop(df_all[df_all.T1_C < -40].index, inplace=True)
+# df_all.T2_C.drop(df_all[df_all.T2_C < -40].index, inplace=True)
 df_all.drop(df_all[df_all.nr_meas < 5].index, inplace=True)
 df_all.drop(df_all[df_all.T1_C_sd > 1].index, inplace=True)
 df_all.drop(df_all[df_all.P_hpa_sd > 2].index, inplace=True)
@@ -59,6 +59,8 @@ df_all.drop(df_all[df_all.T2_C_sd > 1].index, inplace=True)
 df_all.drop(df_all[df_all.rh_sd > 5].index, inplace=True)
 df_all.drop(df_all[df_all.rh_sd > 5].index, inplace=True)
 df_all.sort_index(ascending=True, inplace=True)
+df_all.T1_C[df_all.T1_C < -40] = np.nan
+df_all.T2_C[df_all.T2_C < -40] = np.nan
 # Drop NaT rows
 df_all["TMP"] = df_all.index.values  # index is a DateTimeIndex
 df_all_noNat = df_all[df_all.TMP.notnull()].copy()  # remove all NaT values
