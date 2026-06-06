@@ -6,35 +6,35 @@ layout: splash
 entries_layout: grid
 classes: wide
 stations1:
-  - image_path: /ClimData/01_LaPaya_TempP_last10days.png
-    alt: 01-La Paya
-    url: '/ClimData/01_LaPaya_TempP_last10days.png'
-    btn_label: "01-La Paya"
-  - image_path: /ClimData/02_RosariodeLerma_TempP_last10days.png
-    btn_label: 02-Rosario de Lerma
-    url: '/ClimData/02_RosariodeLerma_TempP_last10days.png'
-  - image_path: /ClimData/03_Cafayate_TempP_last10days.png
-    alt: 03-Cafayate
-    btn_label: 03-Cafayate
-    url: '/ClimData/03_Cafayate_TempP_last10days.png'
+  - image_path: /ClimData/01_Bidur_TempP_last10days.png
+    alt: 01-Bidur
+    url: '/ClimData/01_Bidur_TempP_last10days.png'
+    btn_label: "01-Bidur"
+  - image_path: /ClimData/02_Trishuli3A_TempP_last10days.png
+    btn_label: 02-Trishuli 3A Dam Site
+    url: '/ClimData/02_Trishuli3A_TempP_last10days.png'
+  - image_path: /ClimData/03_Sanjen_TempP_last10days.png
+    alt: 03-Sanjen Hydropower
+    btn_label: "03-Sanjen Hydropower"
+    url: '/ClimData/03_Sanjen_TempP_last10days.png'
 stations2:
-  - image_path: /ClimData/04_Angastaco_TempP_last10days.png
-    alt: 04-Angastaco
-    btn_label: 04-Angastaco
-    url: '/ClimData/04_Angastaco_TempP_last10days.png'
-  - image_path: /ClimData/05_LaPoma_TempP_last10days.png
-    btn_label: 05-La Poma
-    alt: 05-La Poma
-    url: '/ClimData/05_LaPoma_TempP_last10days.png'
-  - image_path: /ClimData/06_SantaMaria_TempP_last10days.png
-    alt: 06-Santa María
-    btn_label: 06-Santa María
-    url: '/ClimData/06_SantaMaria_TempP_last10days.png'
+  - image_path: /ClimData/04_Chilime_TempP_last10days.png
+    alt: 04-Chilime
+    btn_label: "04-Chilime Hydropower Station"
+    url: '/ClimData/04_Chilime_TempP_last10days.png'
+  - image_path: /ClimData/05_Dhunche_TempP_last10days.png
+    btn_label: "05-Dhunche Nepal Electricity Authority"
+    alt: 05-Dhunche Nepal Electricity Authority
+    url: '/ClimData/05_Dhunche_TempP_last10days.png'
+  - image_path: /ClimData/06_SanjenHW_TempP_last10days.png
+    alt: 06-Sanjen Hydropower Headwater
+    btn_label: "06-Sanjen Hydropower Headwater"
+    url: '/ClimData/06_SanjenHW_TempP_last10days.png'
 stations3:
-  - image_path: /ClimData/07_LosCardones_TempP_last10days.png
-    alt: 07-Parque Nacional Los Cardones
-    btn_label: 07-Parque Nacional Los Cardones
-    url: '/ClimData/07_LosCardones_TempP_last10days.png'
+  - image_path: /ClimData/07_Trishuli3APH_TempP_last10days.png
+    alt: 07-Trishuli 3A Power House
+    btn_label: 07-Trishuli 3A Power House
+    url: '/ClimData/07_Trishuli3APH_TempP_last10days.png'
   - image_path: /ClimData/07_LosCardones_TempP_last10days.png
     btn_label: 08-Alfarcito
     alt: 08-Alfarcito
@@ -56,11 +56,6 @@ stations4:
     alt: 12-El Galpón
     btn_label: 12-El Galpón
     url: '/ClimData/12_Galpon_TempP_last10days.png'
-stations5:
-  - image_path: /ClimData/17_Pozuelos_TempP_last10days.png
-    alt: 17-Laguna de los Pozuelos
-    btn_label: 17-Laguna de los Pozuelos
-    url: '/ClimData/17_Pozuelos_TempP_last10days.png'
 
 ---
 
@@ -74,4 +69,3 @@ Click on figure label to enlarge. Only last 10 days of data are shown.
 
 {% include feature_row id="stations4" type=center%}
 
-{% include feature_row id="stations5" type=center%}
