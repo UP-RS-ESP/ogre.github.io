@@ -14,5 +14,5 @@ All software was developed at the University of Potsdam.
 
 {% include figure popup=true image_path="/images/hydro_sensor_lr.jpg" alt="" caption="Hydrology Sensor." %}
 
-{% include figure popup=true image_path="/images/npa1_hardware_lr.jpg" alt="" caption="We house the hardware in multiple enclosures to ensure safe operation, and include a 12V backup battery to maintain functionality during power outages." %}
+{% include figure popup=true image_path="/images/npa7_hardware_lr.jpg" alt="" caption="We house the hardware in multiple enclosures to ensure safe operation, and include a 12V backup battery to maintain functionality during power outages." %}
 
