@@ -10,6 +10,9 @@ import matplotlib.dates as mdates
 from dateutil.tz import gettz
 import datetime
 
+plt.rcParams["axes.facecolor"] = "#eeeeee"
+plt.rcParams["figure.facecolor"] = "#eeeeee"
+
 pd.options.mode.chained_assignment = None  # default='warn'
 
 
@@ -283,7 +286,7 @@ def plot_single_StromPiLog():
 
 
 log_paths = sys.argv[1]
-data_paths = "qt01,qt02,qt03,qt04,qt05,qt06,qt07,qt08,qt09,qt10,qt11,qt12,qt17"
+data_paths = "npa1,npa4,npa5,npa6,npa7"
 data_path_single = data_paths.split(",")
 station_name = []
 filelists = []
