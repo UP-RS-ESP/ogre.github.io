@@ -7,7 +7,7 @@ cd /raid/Nepal/tron.github.io/ClimData/
 python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data.py /raid/Nepal/tron/clim_data/npa1/ "Bidur (Trishuli Power House)" 01_Bidur /raid/Nepal/tron.github.io/ClimData/
 
 cd /raid/Nepal/tron.github.io/ClimData/
-python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data_tinyblack.py /raid/Nepal/tron/clim_data/npa2/ "Trishuli 3A Dam Side" 02_Trishuli3A /raid/Nepal/tron.github.io/ClimData/
+python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data_tinyblack.py /raid/Nepal/tron/clim_data/npa2/ "Trishuli 3A Dam Site" 02_Trishuli3A /raid/Nepal/tron.github.io/ClimData/
 
 cd /raid/Nepal/tron.github.io/ClimData/
 python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data_tinyblack.py /raid/Nepal/tron/clim_data/npa3/ "Sanjen Hydropower Station" 03_Sanjen /raid/Nepal/tron.github.io/ClimData/
