@@ -6,62 +6,44 @@ layout: splash
 entries_layout: grid
 classes: wide
 stations1:
-  - image_path: /images/01_LaPaya_lr.jpg
-    alt: 01-LaPaya
-    btn_label: 01-LaPaya
-    url: '/images/01_LaPaya_lr.jpg'
-  - image_path: /images/02_RosariodeLerma.jpg
-    alt: 02-Rosario de Lerma
-    btn_label: 02-Rosario de Lerma
-    url: '/images/02_RosariodeLerma.jpg'
-  - image_path: /images/03_Cafayate.jpg
-    alt: 03-Cafayate
-    btn_label: 03-Cafayate
-    url: '/images/03_Cafayate.jpg'
+  - image_path: /images/npa1_setup2_lr.jpg
+    alt: NPA1-Bidur (Trishuli Power House)
+    btn_label: NPA1 Bidur (Trishuli Power House)
+    url: '/images/npa1_setup2_lr.jpg'
+  - image_path: /images/npa2_setup3_lr.jpg
+    alt: NPA2 Trishuli 3A Dam Site
+    btn_label: NPA2 Trishuli 3A Dam Site
+    url: '/images/npa2_setup3_lr.jpg'
+  - image_path: /images/npa3_setup_lr.jpg
+    alt: NPA3 Sanjen Hydropower
+    btn_label: NPA3 Sanjen Hydropower
+    url: '/images/npa3_setup_lr.jpg'
 stations2:
-  - image_path: /images/04_Angastaco.jpg
-    alt: 04-Angastaco
-    btn_label: 04-Angastaco
-    url: '/images/04_Angastaco.jpg'
-  - image_path: /images/05_LaPoma_lr.jpg
-    alt: 05-La Poma
-    btn_label: 05-La Poma
-    url: '/images/qt05_LaPoma_lr.jpg'
-  - image_path: /images/06_SantaMaria.jpg
-    alt: 06-Santa Maria
-    btn_label: 06-Santa María
-    url: '/images/06_SantaMaría.jpg/'
+  - image_path: /images/npa4_setup_lr.jpg
+    alt: NPA4 Chilime Hydropower Station
+    btn_label: NPA4 Chilime Hydropower Station
+    url: '/images/npa4_setup_lr.jpg'
+  - image_path: /images/npa5_setup3_lr.jpg
+    alt: NPA5 Dhunche Nepal Electricity Authority
+    btn_label: NPA5 Dhunche Nepal Electricity Authority
+    url: '/images/npa5_setup3_lr.jpg'
+  - image_path: /images/npa6_setup_lr.jpg
+    alt: NPA6 Sanjen Hydropower Headwater
+    btn_label: NPA6 Sanjen Hydropower Headwater
+    url: '/images/npa6_setup_lr.jpg'
 stations3:
-  - image_path: /images/07_LosCardones.jpg
-    alt: 07-Parque Nacional Los Cardones
-    btn_label: 07-Parque Nacional Los Cardones
-    url: '/images/07_LosCardones.jpg'
-  - image_path: /images/08_Alfarcito.jpg
-    btn_label: 08-Alfarcito
-    alt: 08-Alfarcito
-    url: '/images/08_Alfarcito.jpg'
-  - image_path: /images/09_SAdelosCobres.jpg
-    alt: 09-San Antonio de los Cobres
-    btn_label: 09-San Antonio de los Cobres
-    url: '/images/09_SAdelosCobres.jpg'
-stations4:
-  - image_path: /images/10_TolarGrande.jpg
-    alt: 10-Tolar Grande
-    btn_label: 10-Tolar Grande
-    url: '/images/10_TolarGrande.jpg'
-  - image_path: /images/11_SalarLlullaillaco.jpg
-    btn_label: 11-Salar Llullaillaco
-    alt: 11-Salar Llullaillaco
-    url: '/images/11_SalarLlullaillaco.jpg'
-  - image_path: /images/12_Galpon.jpg
-    alt: 12-El Galpón
-    btn_label: 12-El Galpón
-    url: '/images/12_Galpon.jpg'
-stations5:
-  - image_path: /images/17_LagunadelosPozuelos.jpg
-    alt: 17-Laguna de los Pozuelos
-    btn_label: 17-Laguna de los Pozuelos
-    url: '/images/17_LagunadelosPozuelos.jpg'
+  - image_path: /images/npa7_setup_lr.jpg
+    alt: NPA7 Trishuli 3A Power House
+    btn_label: NPA7 Trishuli 3A Power House
+    url: '/images/npa7_setup_lr.jpg'
+  - image_path: /images/
+    btn_label: 
+    alt: 
+    url: '/images/'
+  - image_path: /images/
+    alt: 
+    btn_label: 
+    url: '/images/'
 
 
 ---
@@ -72,6 +54,3 @@ stations5:
 
 {% include feature_row id="stations3" type=center%}
 
-{% include feature_row id="stations4" type=center%}
-
-{% include feature_row id="stations5" type=center%}
