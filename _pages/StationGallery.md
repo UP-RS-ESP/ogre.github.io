@@ -36,14 +36,19 @@ stations3:
     alt: NPA7 Trishuli 3A Power House
     btn_label: NPA7 Trishuli 3A Power House
     url: '/images/npa7_setup_lr.jpg'
-  - image_path: /images/
-    btn_label: 
-    alt: 
-    url: '/images/'
-  - image_path: /images/
-    alt: 
-    btn_label: 
-    url: '/images/'
+stations4:
+  - image_path: /images/Chilime_lr.jpg
+    alt: Chilime River Station
+    btn_label: Chilime River Station
+    url: '/images/Chilime_lr.jpg'
+  - image_path: /images/Langtang_lr.jpg
+    alt: Langtang River Station
+    btn_label: Langtang River Station
+    url: '/images/Langtang_lr.jpg'
+  - image_path: /images/UpperSanjen2B_lr.jpg
+    alt: Sanjen Hydropower Headwater River Station
+    btn_label: Sanjen Hydropower Headwater River Station
+    url: '/images/UpperSanjen2B_lr.jpg'
 
 
 ---
@@ -53,4 +58,6 @@ stations3:
 {% include feature_row id="stations2" type=center%}
 
 {% include feature_row id="stations3" type=center%}
+
+{% include feature_row id="stations4" type=center%}
 
