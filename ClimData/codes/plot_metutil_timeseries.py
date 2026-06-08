@@ -135,7 +135,7 @@ def plot_Wet_Zen(df_single_station, df_single_station_msk, pngfname):
         label="Zenith Wet Delay 12-hour rolling mean",
     )
     ax[1].set_ylim([0, 400])
-    ax1b = ax[1].twinx()
+    # ax1b = ax[1].twinx()
     ax[1].grid()
     ax[1].legend(prop={"size": 14})
     ax[1].set_ylabel(r"Zenith Wet Delay (mm)", fontsize=14, fontweight="bold")
@@ -183,18 +183,15 @@ def plot_PW(df_single_station, df_single_station_msk, pngfname):
         color="lightblue",
         label="Precipitable Water (VMF1)",
     )
-    # ax0b = ax[0].twinx()
-    # ax[0].errorbar(
-    #     x=df_single_station_msk.index,
-    #     y=df_single_station_msk["PW_local"],
-    #     yerr=df_single_station_msk["Sig_PW_local"],
-    #     linestyle="",
-    #     lw=0.5,
-    #     color="lightblue",
-    #     label="Precipitable Water",
-    # )
+    ax[0].plot(
+        df_single_station_msk.index,
+        df_single_station_msk["PW_local"],
+        linestyle="-",
+        lw=0.5,
+        color="navy",
+        label="Precipitable Water (local temperature)",
+    )
     ax[0].grid()
-    # ax[0].set_ylabel(r"Zenith Wet Delay (mm)", fontsize=14, fontweight="bold")
     ax[0].set_ylabel(
         "Precipitable Water (mm)", fontsize=14, color="black", fontweight="bold"
     )
@@ -205,27 +202,26 @@ def plot_PW(df_single_station, df_single_station_msk, pngfname):
     ax[0].xaxis.set_major_locator(mdates.HourLocator(interval=24))
     ax[0].xaxis.set_minor_locator(mdates.HourLocator(interval=12))
     ax[0].set_xlim([start_time, end_time])
-    ax0b.set_ylabel()
-    ax[0].set_ylim([0, 400])
+    ax[0].set_ylim([0, 60])
     # PLOT 1
     ax[1].plot(
         df_single_station.index,
-        df_single_station["Wet_Zen"],
-        linestyle="",
-        marker="o",
+        df_single_station["PW"],
+        linestyle="-",
+        marker="",
         ms=0.2,
         lw=0.5,
         color="navy",
-        label="Zenith Wet Delay",
+        label="Precipitable Water (VMF1)",
     )
     ax[1].plot(
         df_single_station.index,
-        df_single_station["Wet_Zen_12h_rollingmean"],
+        df_single_station["PW_local"],
         linestyle="-",
         marker="",
-        lw=1,
-        color="navy",
-        label="Zenith Wet Delay 12-hour rolling mean",
+        lw=0.5,
+        color="lightblue",
+        label="Precipitable Water (local temperature)",
     )
     # ax[1].fill_between(
     #     df_single_station.index,
@@ -237,42 +233,17 @@ def plot_PW(df_single_station, df_single_station_msk, pngfname):
     #     alpha=0.3,
     #     label=r"$\sigma$ Zenith Wet Delay",
     # )
-    ax[1].set_ylim([0, 400])
-    ax1b = ax[1].twinx()
-    lns1 = ax1b.errorbar(
-        x=df_single_station.index,
-        y=df_single_station["PW"],
-        yerr=df_single_station["Sig_PW"],
-        linestyle="",
-        lw=0.5,
-        color="lightblue",
-        label="Precipitable Water",
-    )
-    ax1b.plot(
-        df_single_station.index,
-        df_single_station["PW_12h_rollingmean"],
-        linestyle="-",
-        marker="",
-        lw=1,
-        color="lightblue",
-        label="Precipitable Water 12-hour rolling mean",
-    )
+    ax[1].set_ylim([0, 60])
     ax[1].grid()
-    lines, labels = ax[1].get_legend_handles_labels()
-    lines2, labels2 = ax1b.get_legend_handles_labels()
-    ax1b.legend(lines + lines2, labels + labels2, loc=0, prop={"size": 14})
-    ax[1].set_ylabel(r"Zenith Wet Delay (mm)", fontsize=14, fontweight="bold")
-    ax1b.set_ylabel(
-        "Precipitable Water (mm)", fontsize=14, color="lightblue", fontweight="bold"
-    )
-    ax1b.set_ylim([0, 50])
+    ax[1].legend(prop={"size": 14})
+    ax[1].set_ylabel(r"Precipitable Water (mm)", fontsize=14, fontweight="bold")
     date_form = DateFormatter("%Y-%b")
     date_form.set_tzinfo(gettz("GMT"))
     ax[1].xaxis.set_major_formatter(date_form)
     ax[1].xaxis.set_major_locator(mdates.MonthLocator(interval=6))
     ax[1].xaxis.set_minor_locator(mdates.MonthLocator(interval=1))
     fg.suptitle(
-        "%s: Zenith Wet Delay and Precipitable Water" % station_name,
+        "%s: Precipitable Water" % station_name,
         fontsize=16,
         fontweight="bold",
     )
@@ -292,19 +263,24 @@ if __name__ == "__main__":
     ]
     dfs = [pd.read_csv(file) for file in csv_files]
     df = pd.concat(dfs, axis=0, ignore_index=False)
+    df["datetime"] = pd.to_datetime(df["datetime"])
+    df = df.set_index("datetime")
 
     unique_stations = df["Name"].unique()
     for i in range(len(unique_stations)):
         station_name = unique_stations[i]
         if (
             station_name != "NPA1"
-            or station_name != "NPA2"
-            or station_name != "NPA3"
-            or station_name != "NPA4"
-            or station_name != "NPA5"
-            or station_name != "NPA6"
-            or station_name != "NPA7"
+            and station_name != "NPA2"
+            and station_name != "NPA3"
+            and station_name != "NPA4"
+            and station_name != "NPA5"
+            and station_name != "NPA6"
+            and station_name != "NPA7"
         ):
+            continue
+        if station_name == "NPA1":
+            # will need to merge climate data for station NPA1 (old and new climate data)
             continue
         df_single_station = df[df.Name == station_name]
         # remove negative zenith wet delay
@@ -314,25 +290,41 @@ if __name__ == "__main__":
         df_single_station = df_single_station2.groupby(level=0).mean(numeric_only=True)
         df_single_station2 = None
         df_single_station = df_single_station.asfreq("h").reindex()
-        # df_single_station.to_csv(outfile_fn + "_%s.csv" % station_name)
-        # df_single_station.to_hdf(outfile_fn + "_%s.hdf" % station_name, key="metutil")
-        start_time = np.max(df_single_station.index) - np.timedelta64(10, "D")
-        start_time.replace(hour=0, minute=0, second=0, microsecond=0)
-        end_time = np.max(df_single_station.index)
-        end_time.replace(hour=23, minute=59, second=59, microsecond=0)
-        mask = (df_single_station.index > start_time) & (
-            df_single_station.index <= end_time
-        )
-        df_single_station_msk = df_single_station.loc[mask]
-        # df_single_station_msk = df_single_station_msk.resample("1h").mean()
-        df_single_station["Wet_Zen_12h_rollingmean"] = (
-            df_single_station["Wet_Zen"].rolling("12h", center=True).mean()
-        )
-        df_single_station["PW_12h_rollingmean"] = (
-            df_single_station["PW"].rolling("12h", center=True).mean()
-        )
-        pngfname = "%s_plot_Wet_Zen_2panels.png" % station_name
-        plot_Wet_Zen(df_single_station, df_single_station_msk, pngfname)
         # Load in T data from met station and calculate PW from local climate data
         #
-        df_single_station["PW_local"] = gnss_zwd_to_pw(zwd, T_s=None, T_m=None)
+        metdata_fname = "%s_meteorologic_data.csv.bz2" % station_name
+        df_met = pd.read_csv(metdata_fname)
+        df_met["date"] = pd.to_datetime(df_met["date"], format="ISO8601")
+        df_met = df_met.set_index("date")
+        df_met2 = df_met.groupby(level=0).mean(numeric_only=True)
+        df_met = df_met2.resample("1h").mean()
+        df_met2 = None
+        df_merged = pd.merge(
+            df_single_station, df_met, left_index=True, right_index=True
+        )
+        if "T1_C" in df_merged.columns:
+            # rename outside temperature to T_C for calculation
+            df_merged.rename(columns={"T1_C": "T_C"}, inplace=True)
+        df_merged["PW_local"] = gnss_zwd_to_pw(
+            df_merged["Wet_Zen"] * 100, T_s=df_merged["T_C"], T_m=None
+        )
+
+        # df_single_station.to_csv(outfile_fn + "_%s.csv" % station_name)
+        # df_single_station.to_hdf(outfile_fn + "_%s.hdf" % station_name, key="metutil")
+        start_time = np.max(df_merged.index) - np.timedelta64(10, "D")
+        start_time.replace(hour=0, minute=0, second=0, microsecond=0)
+        end_time = np.max(df_merged.index)
+        end_time.replace(hour=23, minute=59, second=59, microsecond=0)
+        mask = (df_merged.index > start_time) & (df_merged.index <= end_time)
+        df_merged_msk = df_merged.loc[mask]
+        # df_merged_msk = df_merged_msk.resample("1h").mean()
+        df_merged["Wet_Zen_12h_rollingmean"] = (
+            df_merged["Wet_Zen"].rolling("12h", center=True).mean()
+        )
+        df_merged["PW_12h_rollingmean"] = (
+            df_merged["PW"].rolling("12h", center=True).mean()
+        )
+        pngfname = "%s_plot_Wet_Zen_2panels.png" % station_name
+        plot_Wet_Zen(df_merged, df_merged_msk, pngfname)
+        pngfname = "%s_plot_PrecipitableWater_2panels.png" % station_name
+        plot_PW(df_merged, df_merged_msk, pngfname)
