@@ -27,3 +27,10 @@ python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data.py /rai
 
 cd /raid/Nepal/tron.github.io/ClimData/
 rsync -avz /raid-manaslu/ttsmith/Nepal_RPI_Stations/rpi_*.png /raid/Nepal/tron.github.io/ClimData/
+
+#cd /raid/Nepal/tron.github.io/ClimData/
+#rsync -avz /raid-manaslu/ttsmith/Nepal_RPI_Stations/rpi*gif /raid/Nepal/tron.github.io/ClimData/
+
+cd /raid/Nepal/tron.github.io/ClimData/
+rsync -avz /raid-manaslu/ttsmith/Nepal_RPI_Stations/rpi*jpg /raid/Nepal/tron.github.io/ClimData/
+
