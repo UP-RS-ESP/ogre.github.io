@@ -14,7 +14,7 @@ header:
   caption: "Photo credit: [Bodo Bookhagen](https://bodobookhagen.github.io/)"
 ---
 
-![image-left](/images/Trishuli_hillslope_photo_portrait_lr.jpg){: .align-left} The *Trishuli River Observatory Netowkr* (TRON) consists of river observation stations, continuous GNSS, and meteorological stations located in Nepal. The scientific stations are installed along the Trishuli River. At present, 3 river obsservation and 7 GNSS/meteorological stations are in operation, with the first one established in May 2023. The stations were installed within the DFG Project STRIVE (PI: Taylor Smith) under the auspices of the University of Potsdam and in collaboration with the Tribhuvan University in Kathmandu.
+![image-left](/images/Trishuli_hillslope_photo_portrait_lr.jpg){: .align-left} The *Trishuli River Observatory Network* (TRON) consists of river observation, continuous GNSS, and meteorological stations located in Nepal. The scientific stations are installed along the Trishuli River. At present, 3 river observation and 7 GNSS/meteorological stations are in operation, with the first one established in May 2023. The stations were installed within the DFG Project STRIVE (PI: [Taylor Smith](https://tasmi.github.io/)) under the auspices of the [University of Potsdam](https://up-rs-esp.github.io/) and in collaboration with the Tribhuvan University in Kathmandu.
 
 The TRON network serves several scientific purposes:
   - Cameras and River Height measurements create time series of river-flow conditions.
@@ -23,4 +23,4 @@ The TRON network serves several scientific purposes:
   - GNSS data help improve understanding of deformation processes in central Nepal.
 
 
-Contact [Taylor Smith](mailto:tsmith@uni-potsdam.de) and [Bodo Bookhagen](mailto:bodo.bookhagen@uni-potsdam.de) with questions.
+Contact [Taylor Smith](mailto:tasmith@uni-potsdam.de) and [Bodo Bookhagen](mailto:bodo.bookhagen@uni-potsdam.de) with questions.

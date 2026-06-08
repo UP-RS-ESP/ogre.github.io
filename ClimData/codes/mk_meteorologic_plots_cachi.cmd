@@ -24,3 +24,6 @@ python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data.py /rai
 cd /raid/Nepal/tron.github.io/ClimData/
 python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data.py /raid/Nepal/tron/clim_data/npa7/ "Trishuli 3A Power House" 07_Trishuli3APH NPA7 /raid/Nepal/tron.github.io/ClimData/
 
+
+cd /raid/Nepal/tron.github.io/ClimData/
+rsync -avz /raid-manaslu/ttsmith/Nepal_RPI_Stations/rpi_*.png /raid/Nepal/tron.github.io/ClimData/

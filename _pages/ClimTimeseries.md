@@ -35,6 +35,20 @@ stations3:
     alt: 07-Trishuli 3A Power House
     btn_label: NPA7 Trishuli 3A Power House
     url: '/ClimData/07_Trishuli3APH_TempP_last10days.png'
+  - image_path: /ClimData/rpi_chilime_Temp_last10days.png
+    alt: Chilime River Station
+    btn_label: Chilime River Station
+    url: '/ClimData/rpi_chilime_Temp_last10days.png'
+  - image_path: /ClimData/rpi_langtang_Temp_last10days.png
+    alt: Langtang River Station
+    btn_label: Langtang River Station
+    url: '/ClimData/rpi_langtang_Temp_last10days.png'
+stations4:
+  - image_path: /ClimData/rpi_sanjen2_Temp_last10days.png
+    alt: Sanjen Hydropower Headwater River Station
+    btn_label: Sanjen Hydropower Headwater River Station
+    url: '/ClimData/rpi_sanjen2_Temp_last10days.png'
+
 
 ---
 
@@ -46,4 +60,5 @@ Click on figure label to enlarge. Only last 10 days of data are shown.
 
 {% include feature_row id="stations3" type=center%}
 
+{% include feature_row id="stations4" type=center%}
 
