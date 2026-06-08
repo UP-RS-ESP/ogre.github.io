@@ -73,77 +73,6 @@ def gnss_zwd_to_pw(zwd, T_s=None, T_m=None):
     return pw
 
 
-def plot_E_trend(
-    trend_ds,
-    pngfname="ERA5_LAI_LinearTrend_25y_2000-2025.png",
-    p_threshold=0.05,
-    stipple_res=5,
-    start_year=2000,
-    max_year=2025,
-    nr_of_years=25,
-):
-    print("--> Generating Cartopy Map visualization...")
-    fig = plt.figure(figsize=(16, 9), dpi=300)
-    ax = plt.axes(projection=ccrs.PlateCarree())
-    # Background features
-    # ax.stock_img()  # Shaded relief
-    ax.add_feature(cfeature.BORDERS, linestyle="-", edgecolor="#444444", alpha=0.8)
-    ax.add_feature(cfeature.COASTLINE, linewidth=0.8, edgecolor="black")
-    ax.add_feature(cfeature.RIVERS, linewidth=0.8, edgecolor="blue", alpha=0.3)
-    ax.add_feature(cfeature.LAKES, facecolor="none", edgecolor="blue", alpha=0.2)
-    # Plot Slope (VPD trends usually use sequential or diverging cmaps depending on context)
-    vminmax = np.max(
-        np.abs(
-            [
-                np.nanpercentile(trend_results["slope"], 99),
-                np.nanpercentile(trend_results["slope"], 1),
-            ]
-        )
-    )
-    trend_plot = trend_ds["slope"].plot(
-        ax=ax,
-        transform=ccrs.PlateCarree(),
-        cmap="Spectral_r",
-        vmin=-vminmax,
-        vmax=vminmax,
-        alpha=0.6,
-        add_colorbar=False,
-    )
-    # Extract significance points
-    sig_mask = trend_ds["p_value"] < p_threshold
-    lon_mesh, lat_mesh = np.meshgrid(trend_ds.longitude, trend_ds.latitude)
-    # Apply stipple resolution downsampling [::stipple_res] so the map remains readable
-    ax.scatter(
-        lon_mesh[sig_mask][::stipple_res],
-        lat_mesh[sig_mask][::stipple_res],
-        color="black",
-        marker=".",
-        s=0.2,
-        alpha=0.6,
-        transform=ccrs.PlateCarree(),
-        label=f"Significant Trend (p < {p_threshold})",
-    )
-    ax.set_xlim([lon_mesh.min(), lon_mesh.max()])
-    ax.set_ylim([lat_mesh.min(), lat_mesh.max()])
-    # Gridlines and aesthetics
-    gl = ax.gridlines(draw_labels=True, linestyle="-", alpha=0.3)
-    gl.top_labels = False
-    gl.right_labels = False
-    cbar = plt.colorbar(
-        trend_plot, ax=ax, orientation="horizontal", pad=0.08, shrink=0.6
-    )
-    cbar.set_label("totalEvporation Trend Slope ($mm / y$ )", fontsize=14)
-    plt.title(
-        "ERA5 totalEvporation %04d-%04d (%02d y)\nSeasonal Component Removed"
-        % (start_year, max_year, nr_of_years),
-        fontsize=16,
-        pad=15,
-    )
-    plt.legend(loc="lower left")
-    fig.savefig(pngfname, dpi=300)
-    plt.close()
-
-
 def plot_Wet_Zen(df_single_station, df_single_station_msk, pngfname):
     fg, ax = plt.subplots(
         nrows=2,
@@ -352,21 +281,31 @@ def plot_PW(df_single_station, df_single_station_msk, pngfname):
 
 
 if __name__ == "__main__":
-    hdf_files = sys.argv[1]
+    # hdf_files = sys.argv[1]
 
     # make one file per station with all data
-    hdf_files = [
-        "2023/Nepal_2023_G_all_stations.hdf",
-        "2024/Nepal_2024_G_all_stations.hdf",
-        "2025/Nepal_2025_G_all_stations.hdf",
-        # "2026/Nepal_2026_G_all_stations.hdf",
+    csv_files = [
+        "Nepal_2023_G_all_stations.csv.bz2",
+        "Nepal_2024_G_all_stations.csv.bz2",
+        "Nepal_2025_G_all_stations.csv.bz2",
+        # "Nepal_2026_G_all_stations.csv.bz2",
     ]
-    dfs = [pd.read_hdf(file) for file in hdf_files]
+    dfs = [pd.read_csv(file) for file in csv_files]
     df = pd.concat(dfs, axis=0, ignore_index=False)
 
     unique_stations = df["Name"].unique()
     for i in range(len(unique_stations)):
         station_name = unique_stations[i]
+        if (
+            station_name != "NPA1"
+            or station_name != "NPA2"
+            or station_name != "NPA3"
+            or station_name != "NPA4"
+            or station_name != "NPA5"
+            or station_name != "NPA6"
+            or station_name != "NPA7"
+        ):
+            continue
         df_single_station = df[df.Name == station_name]
         # remove negative zenith wet delay
         df_single_station2 = df_single_station.drop(
