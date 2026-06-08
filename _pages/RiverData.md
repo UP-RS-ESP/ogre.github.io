@@ -7,6 +7,11 @@ classes: wide
 toc: false
 ---
 
-<video id="example_video_1" class="video-js vjs-default-skin" width="640" src="/ClimData/rpi_chilime_dailyNoon.mp4" type='video/mp4' controls>
+<video width="640" src="/ClimData/rpi_chilime_dailyNoon.mp4" type='video/mp4' controls>
+</video>
+
+<video width="320" height="240" controls>
+  <source src="/ClimData/rpi_chilime_dailyNoon.mp4" type="video/mp4">
+Your browser does not support the video tag.
 </video>
 
