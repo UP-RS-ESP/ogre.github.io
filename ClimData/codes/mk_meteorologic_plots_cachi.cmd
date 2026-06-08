@@ -16,7 +16,7 @@ cd /raid/Nepal/tron.github.io/ClimData/
 python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data.py /raid/Nepal/tron/clim_data/npa4/ "Chilime Hydropower Station" 04_Chilime NPA4 /raid/Nepal/tron.github.io/ClimData/
 
 cd /raid/Nepal/tron.github.io/ClimData/
-python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data.py /raid/Nepal/tron/clim_data/npa5/ "Dhunche Nepal Electricity Authority" NPA5 05_Dhunche /raid/Nepal/tron.github.io/ClimData/
+python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data.py /raid/Nepal/tron/clim_data/npa5/ "Dhunche Nepal Electricity Authority" 05_Dhunche NPA5 /raid/Nepal/tron.github.io/ClimData/
 
 cd /raid/Nepal/tron.github.io/ClimData/
 python3 /raid/Nepal/tron.github.io/ClimData/codes/read_meteorologic_data.py /raid/Nepal/tron/clim_data/npa6/ "Sanjen Hydropower Headwater" 06_Sanjen2 NPA6 /raid/Nepal/tron.github.io/ClimData/
