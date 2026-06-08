@@ -30,6 +30,6 @@ toc: false
 </div>
 
 
-<video id="example_video_1" class="video-js vjs-default-skin" width="640" height="264" src="/ClimData/rpi_chilime_dailyNoon.mp4" type='video/mp4'>
+<video id="example_video_1" class="video-js vjs-default-skin" width="640" src="/ClimData/rpi_chilime_dailyNoon.mp4" type='video/mp4' controls>
 </video>
 
