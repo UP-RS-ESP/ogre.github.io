@@ -19,7 +19,8 @@ plt.rcParams["figure.facecolor"] = "#eeeeee"
 data_path = sys.argv[1]
 station_name = sys.argv[2]
 file_prefix = sys.argv[3]
-output_path = sys.argv[4]
+station_name_4chars = sys.argv[4]
+output_path = sys.argv[5]
 
 filelist = glob.glob(os.path.join(data_path, "npa*.??m.7z"))
 filelist.sort()
@@ -62,6 +63,13 @@ df_all_noNat.drop(["TMP"], axis=1, inplace=True)
 # df_all[df_all.index.isnull()]
 df_all = df_all_noNat.copy()
 df_all_noNat = None
+# Save to hdf file
+df_all.to_hdf(
+    os.path.join(output_path, "%s_meteorologic_data.hdf" % station_name_4chars),
+    key="MetData",
+)
+
+# Prepare data for plotting
 start_time = np.max(df_all.index) - np.timedelta64(10, "D")
 start_time.replace(hour=0, minute=0, second=0, microsecond=0)
 end_time = np.max(df_all.index)
