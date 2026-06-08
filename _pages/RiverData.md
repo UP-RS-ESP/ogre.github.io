@@ -2,11 +2,9 @@
 btn_label: River Data
 permalink: /RiverData/
 author_profile: false
-layout: splash
 entries_layout: grid
 classes: wide
 toc: false
-classes: wide
 ---
 
 <div class="video-gallery">
