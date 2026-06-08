@@ -73,9 +73,8 @@ df_all_noNat.drop(["TMP"], axis=1, inplace=True)
 df_all = df_all_noNat.copy()
 df_all_noNat = None
 # Save to hdf file
-df_all.to_hdf(
-    os.path.join(output_path, "%s_meteorologic_data.hdf" % station_name_4chars),
-    key="MetData",
+df_all.to_csv(
+    os.path.join(output_path, "%s_meteorologic_data.csv" % station_name_4chars)
 )
 
 # Prepare data for plotting
