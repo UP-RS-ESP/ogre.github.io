@@ -62,13 +62,13 @@ PW_stations2:
 ---
 Click on figure label to enlarge. Data are updated monthly.
 
-Zenith Wet Delay from multi-frequency GNSS
+<b>Zenith Wet Delay from multi-frequency GNSS using GAMIT.</b>
 
 {% include feature_row id="stations1" type=center%}
 
 {% include feature_row id="stations2" type=center%}
 
-Precipitable Water from Wet delay using VMF1 and local temperature measurements and conversions (Bevis et al., 1992).
+<b>Precipitable Water from Wet delay using VMF1 and local temperature measurements and conversions (Bevis et al., 1992).</b>
 
 {% include feature_row id="PW_stations1" type=center%}
 
