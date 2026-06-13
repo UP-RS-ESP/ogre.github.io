@@ -11,8 +11,6 @@ from matplotlib.dates import DateFormatter
 from matplotlib.dates import AutoDateLocator
 import matplotlib.dates as mdates
 from dateutil.tz import gettz
-import cartopy.crs as ccrs
-import cartopy.feature as cfeature
 
 plt.rcParams["axes.facecolor"] = "#eeeeee"
 plt.rcParams["figure.facecolor"] = "#eeeeee"
