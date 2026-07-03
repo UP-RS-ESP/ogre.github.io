@@ -73,10 +73,10 @@ df_all_noNat.drop(["TMP"], axis=1, inplace=True)
 df_all = df_all_noNat.copy()
 df_all_noNat = None
 # Save to hdf file
-df_all.to_csv(
-    os.path.join(output_path, "%s_meteorologic_data.csv.bz2" % station_name_4chars),
-    compression="bz2",
-)
+# df_all.to_csv(
+#     os.path.join(output_path, "%s_meteorologic_data.csv.bz2" % station_name_4chars),
+#     compression="bz2",
+# )
 
 # Prepare data for plotting
 start_time = np.max(df_all.index) - np.timedelta64(10, "D")
