@@ -2,25 +2,25 @@
 layout: splash
 search: false
 permalink: /
-title: "TRON"
+title: "OGRE"
 author_profile: false
 redirect_from:
   - /about/
   - /about.html
-excerpt: "TRON - The *The Trishuli River Observation Network* is a river observatory network with continuous GNSS and meteorological stations in the Nepal."
+excerpt: "OGRE - The *Olkaria Geodetic Rift Experiment* is a GNSS observatory network in the central Kenya Rift."
 header:
   overlay_image: images/Trishuli_photo.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
   caption: "Photo credit: [Bodo Bookhagen](https://bodobookhagen.github.io/)"
 ---
 
-![image-left](/images/Trishuli_hillslope_photo_portrait_lr.jpg){: .align-left} The *Trishuli River Observatory Network* (TRON) consists of river observation, continuous GNSS, and meteorological stations located in Nepal. The scientific stations are installed along the Trishuli River. At present, 3 river observation and 7 GNSS/meteorological stations are in operation, with the first one established in May 2023. The stations were installed within the DFG Project STRIVE (PI: [Taylor Smith](https://tasmi.github.io/)) under the auspices of the [University of Potsdam](https://up-rs-esp.github.io/) and in collaboration with the Tribhuvan University in Kathmandu.
+![image-left](/images/2Logo_map_OGRE.jpg){: .align-left} The *Olkaria Geodetic Rift Experiment* (OGRE) is a set of geodetic stations (continuous GNSS) and meteorological stations located in the East African Rift System in Kenya. The scientific stations are installed in the Olkaria region south of Lake Naivasha. At present, 9 geodetic stations are in operation, with the first one established in May 2024. The stations were installed under the auspices of the [University of Potsdam](https://up-rs-esp.github.io/) and in collaboration with KenGen.
 
-The TRON network serves several scientific purposes:
-  - Cameras and River Height measurements create time series of river-flow conditions.
-  - High-resolution meteorological observations are used to capture and analyze rapid weather variations.
+The OGRE network serves several scientific purposes:
   - GNSS measurements are processed to estimate integrated water vapor, enabling the study of three-dimensional water-vapor transport.
-  - GNSS data help improve understanding of deformation processes in central Nepal.
+  - The water-vapor measurements to enhance and correct InSAR measurements of the Olkaria Geothermal Complex.
+  - Deformation measurements to understand geothermal dynamics.
+  - High-resolution meteorological observations are used to capture and analyze rapid weather variations.
 
 
-Contact [Taylor Smith](mailto:tasmith@uni-potsdam.de) and [Bodo Bookhagen](mailto:bodo.bookhagen@uni-potsdam.de) with questions.
+Contact [Bodo Bookhagen](mailto:bodo.bookhagen@uni-potsdam.de) with questions.

@@ -6,14 +6,14 @@ layout: splash
 entries_layout: grid
 classes: wide
 stations1:
-  - image_path: /images/npa1_setup2_lr.jpg
-    alt: NPA1-Bidur (Trishuli Power House)
-    btn_label: NPA1 Bidur (Trishuli Power House)
-    url: '/images/npa1_setup2_lr.jpg'
-  - image_path: /images/npa2_setup3_lr.jpg
+  - image_path: /images/KenGen_GNSS_site1.jpg
+    alt: OK01
+    btn_label: OK01
+    url: '/images/KenGen_GNSS_site1.jpg'
+  - image_path: /images/KenGen_GNSS_site2.jpg
     alt: NPA2 Trishuli 3A Dam Site
     btn_label: NPA2 Trishuli 3A Dam Site
-    url: '/images/npa2_setup3_lr.jpg'
+    url: '/images/KenGen_GNSS_site2.jpg'
   - image_path: /images/npa3_setup_lr.jpg
     alt: NPA3 Sanjen Hydropower
     btn_label: NPA3 Sanjen Hydropower
