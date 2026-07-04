@@ -176,10 +176,100 @@ ax[1].xaxis.set_major_locator(mdates.HourLocator(interval=24))
 ax[1].xaxis.set_minor_locator(mdates.HourLocator(interval=12))
 ax[1].set_xlim([start_time, end_time])
 fg.suptitle(
-    "%s: temperature, pressure, and relative humidity" % station_name,
+    "%s (%s): temperature, pressure, and relative humidity" % (station_name, station_name_4chars)
     fontsize=16,
     fontweight="bold",
 )
 # ax[1].set_xlim([np.max(df_all.index) - np.timedelta64(10,'D'), np.max(df_all.index)])
 fg.savefig("%s/%s_TempP_last10days.png" % (output_path, file_prefix), dpi=300)
 plt.close(fg)
+
+
+fg, ax = plt.subplots(
+    nrows=2, ncols=1, figsize=(12, 10), dpi=300, layout="constrained", sharex=True
+)
+ax[0].errorbar(
+    x=df_all.index,
+    y=df_all["T1_C"],
+    yerr=df_all["T1_C_sd"],
+    linestyle="-",
+    marker="o",
+    ms=1,
+    lw=0.5,
+    color="navy",
+    label="T1 (outside)",
+)
+ax[0].errorbar(
+    x=df_all.index,
+    y=df_all["T2_C"],
+    yerr=df_all["T2_C_sd"],
+    linestyle="",
+    marker="o",
+    ms=1,
+    lw=0.5,
+    color="darkred",
+    label="T2 (inside)",
+)
+ax[0].grid()
+ax[0].set_ylabel(r"Temperature ($^\circ$C)", fontsize=14, fontweight="bold")
+ax[0].legend(prop={"size": 14})
+date_form = DateFormatter("%Y-%b")
+date_form.set_tzinfo(gettz("GMT"))
+ax[0].xaxis.set_major_formatter(date_form)
+ax[0].xaxis.set_major_locator(mdates.MonthLocator(interval=6))
+ax[0].xaxis.set_minor_locator(mdates.MonthLocator(interval=1))
+ax1b = ax[1].twinx()
+lns1 = ax[1].errorbar(
+    x=df_all.index,
+    y=df_all["P_hpa"],
+    yerr=df_all["P_hpa_sd"],
+    linestyle="",
+    lw=0.5,
+    color="lightgreen",
+)
+lns2 = ax1b.errorbar(
+    x=df_all.index,
+    y=df_all["rh"],
+    yerr=df_all["rh_sd"],
+    linestyle="",
+    lw=0.5,
+    color="violet",
+)
+ax1b.plot(
+    df_all.index,
+    df_all["rh_30m_rolling_average"],
+    marker="o",
+    ms=1,
+    linestyle="",
+    color="purple",
+    label="Rel. Humidity, 30-min rolling mean",
+)
+ax[1].plot(
+    df_all.index,
+    df_all["P_hpa_30m_rolling_average"],
+    marker="o",
+    ms=1,
+    linestyle="",
+    color="darkgreen",
+    label="Pressure, 30-min rolling mean",
+)
+ax1b.set_ylim([0, 100])
+ax[1].grid()
+ax[1].set_xlabel("Year-Month (GMT)", fontsize=14, fontweight="bold")
+ax[1].set_ylabel("Pressure (hPa)", fontsize=14, color="darkgreen", fontweight="bold")
+ax1b.set_ylabel("Rel. Humidity (%)", fontsize=14, color="purple", fontweight="bold")
+lines, labels = ax[1].get_legend_handles_labels()
+lines2, labels2 = ax1b.get_legend_handles_labels()
+ax1b.legend(lines + lines2, labels + labels2, loc=0, prop={"size": 14})
+ax[1].xaxis.set_major_formatter(date_form)
+ax[1].xaxis.set_major_locator(mdates.MonthLocator(interval=6))
+ax[1].xaxis.set_minor_locator(mdates.MonthLocator(interval=1))
+ax[1].set_xlim([start_time, end_time])
+fg.suptitle(
+    "%s (%s): temperature, pressure, and relative humidity" % (station_name, station_name_4chars)
+    fontsize=16,
+    fontweight="bold",
+)
+fg.savefig("%s/%s_TempP_all.png" % (output_path, file_prefix), dpi=300)
+plt.close(fg)
+
