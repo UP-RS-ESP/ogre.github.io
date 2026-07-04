@@ -51,4 +51,5 @@ Click on figure label to enlarge. Data are updated monthly.
 
 {% include feature_row id="stations2" type=center%}
 
+{% include feature_row id="stations3" type=center%}
 
