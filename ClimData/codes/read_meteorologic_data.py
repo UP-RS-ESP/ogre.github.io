@@ -12,8 +12,8 @@ from matplotlib.dates import AutoDateLocator
 import matplotlib.dates as mdates
 from dateutil.tz import gettz
 
-plt.rcParams["axes.facecolor"] = "#eeeeee"
-plt.rcParams["figure.facecolor"] = "#eeeeee"
+# plt.rcParams["axes.facecolor"] = "#eeeeee"
+# plt.rcParams["figure.facecolor"] = "#eeeeee"
 
 data_path = sys.argv[1]
 station_name = sys.argv[2]
@@ -161,7 +161,6 @@ ax1b.legend(lines + lines2, labels + labels2, loc=0, prop={"size": 14})
 ax[1].xaxis.set_major_formatter(date_form)
 ax[1].xaxis.set_major_locator(mdates.MonthLocator(interval=6))
 ax[1].xaxis.set_minor_locator(mdates.MonthLocator(interval=1))
-ax[1].set_xlim([start_time, end_time])
 fg.suptitle(
     "%s (%s): temperature, pressure, and relative humidity"
     % (station_name, station_name_4chars),
@@ -212,8 +211,8 @@ ax[0].legend(prop={"size": 14})
 date_form = DateFormatter("%b-%d")
 date_form.set_tzinfo(gettz("GMT"))
 ax[0].xaxis.set_major_formatter(date_form)
-ax[1].xaxis.set_major_locator(mdates.HourLocator(interval=24))
-ax[1].xaxis.set_minor_locator(mdates.HourLocator(interval=12))
+ax[0].xaxis.set_major_locator(mdates.HourLocator(interval=24))
+ax[0].xaxis.set_minor_locator(mdates.HourLocator(interval=12))
 ax[0].set_xlim([start_time, end_time])
 # ax[0].set_title(
 #     "%s: 1-minute logging interval, temperature" % station_name, fontsize=16
