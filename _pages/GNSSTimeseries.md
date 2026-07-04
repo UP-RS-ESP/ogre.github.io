@@ -6,58 +6,41 @@ layout: splash
 entries_layout: grid
 classes: wide
 stations1:
-  - image_path: /ClimData/NPA1_plot_Wet_Zen_2panels.png
-    alt: 01-Bidur (NPA1)
-    url: '/ClimData/NPA1_plot_Wet_Zen_2panels.png'
-    btn_label: "NPA1 Bidur"
-  - image_path: /ClimData/NPA2_plot_Wet_Zen_2panels.png
-    alt: 02-Trishuli 3A Dam Site (NPA2)
-    btn_label: NPA2 Trishuli 3A Dam Site
-    url: '/ClimData/NPA2_plot_Wet_Zen_2panels.png'
-  - image_path: /ClimData/NPA3_plot_Wet_Zen_2panels.png
-    alt: 03-Sanjen Hydropower (NPA3)
-    btn_label: "NPA3 Sanjen Hydropower"
-    url: '/ClimData/NPA3_plot_Wet_Zen_2panels.png'
+  - image_path: /ClimData/OK01_plot_Wet_Zen_2panels.png
+    alt: OK01-Olkaria1AU
+    btn_label: "OK01 Olkaria 1AU"
+    url: '/ClimData/OK01_plot_Wet_Zen_2panels.png'
+  - image_path: /ClimData/OK02_plot_Wet_Zen_2panels.png
+    alt: OK02-Geolab
+    btn_label: OK02 KenGen Geolab
+    url: '/ClimData/OK02_plot_Wet_Zen_2panels.png'
+  - image_path: /ClimData/OK03_plot_Wet_Zen_2panels.png
+    alt: OK03-OW914
+    btn_label: "OK03 Well 914"
+    url: '/ClimData/OK03_plot_Wet_Zen_2panels.png'
 stations2:
-  - image_path: /ClimData/NPA4_plot_Wet_Zen_2panels.png
-    alt: 04-Chilime
-    btn_label: "NPA4 Chilime Hydropower Station"
-    url: '/ClimData/NPA4_plot_Wet_Zen_2panels.png'
-  - image_path: /ClimData/NPA6_plot_Wet_Zen_2panels.png
-    alt: 06-Sanjen Hydropower Headwater
-    btn_label: "NPA6 Sanjen Hydropower Headwater"
-    url: '/ClimData/NPA6_plot_Wet_Zen_2panels.png'
-  - image_path: /ClimData/NPA7_plot_Wet_Zen_2panels.png
-    alt: 07-Trishuli 3A Power House
-    btn_label: NPA7 Trishuli 3A Power House
-    url: '/ClimData/NPA7_plot_Wet_Zen_2panels.png'
+  - image_path: /ClimData/OK04_plot_Wet_Zen_2panels.png
+    alt: OK05-OW730
+    btn_label: "OK05 Well 730"
+    url: '/ClimData/OK04_plot_Wet_Zen_2panels.png'
+  - image_path: /ClimData/OK06_plot_Wet_Zen_2panels.png
+    btn_label: "OK06 Well 52"
+    alt: OK06-OW52
+    url: '/ClimData/OK06_plot_Wet_Zen_2panels.png'
+  - image_path: /ClimData/OK07_plot_Wet_Zen_2panels.png
+    alt: OK07-KenGen-DinnerClub
+    btn_label: "OK07 KenGen Dinner Club"
+    url: '/ClimData/OK07_plot_Wet_Zen_2panels.png'
+stations3:
+  - image_path: /ClimData/OK08_plot_Wet_Zen_2panels.png
+    alt: OK08-Olomayiana
+    btn_label: "OK08 Olomayiana"
+    url: '/ClimData/OK08_plot_Wet_Zen_2panels.png'
+  - image_path: /ClimData/TUKN_plot_Wet_Zen_2panels.png
+    alt: TUKN-TechnicalUniversity
+    btn_label: "TUKN Technical University of Kenya, Nairobi"
+    url: '/ClimData/TUKN_plot_Wet_Zen_2panels.png'
 
-PW_stations1:
-  - image_path: /ClimData/NPA1_plot_PrecipitableWater_2panels.png
-    alt: 01-Bidur (NPA1)
-    url: '/ClimData/NPA1_plot_PrecipitableWater_2panels.png'
-    btn_label: "NPA1 Bidur"
-  - image_path: /ClimData/NPA2_plot_PrecipitableWater_2panels.png
-    alt: 02-Trishuli 3A Dam Site (NPA2)
-    btn_label: NPA2 Trishuli 3A Dam Site
-    url: '/ClimData/NPA2_plot_PrecipitableWater_2panels.png'
-  - image_path: /ClimData/NPA3_plot_PrecipitableWater_2panels.png
-    alt: 03-Sanjen Hydropower (NPA3)
-    btn_label: "NPA3 Sanjen Hydropower"
-    url: '/ClimData/NPA3_plot_PrecipitableWater_2panels.png'
-PW_stations2:
-  - image_path: /ClimData/NPA4_plot_PrecipitableWater_2panels.png
-    alt: 04-Chilime
-    btn_label: "NPA4 Chilime Hydropower Station"
-    url: '/ClimData/NPA4_plot_PrecipitableWater_2panels.png'
-  - image_path: /ClimData/NPA6_plot_PrecipitableWater_2panels.png
-    alt: 06-Sanjen Hydropower Headwater
-    btn_label: "NPA6 Sanjen Hydropower Headwater"
-    url: '/ClimData/NPA6_plot_PrecipitableWater_2panels.png'
-  - image_path: /ClimData/NPA7_plot_PrecipitableWater_2panels.png
-    alt: 07-Trishuli 3A Power House
-    btn_label: NPA7 Trishuli 3A Power House
-    url: '/ClimData/NPA7_plot_PrecipitableWater_2panels.png'
 
 ---
 Click on figure label to enlarge. Data are updated monthly.
@@ -68,9 +51,4 @@ Click on figure label to enlarge. Data are updated monthly.
 
 {% include feature_row id="stations2" type=center%}
 
-<b>Precipitable Water from Wet delay using VMF1 and local temperature measurements and conversions (Bevis et al., 1992).</b>
-
-{% include feature_row id="PW_stations1" type=center%}
-
-{% include feature_row id="PW_stations2" type=center%}
 
