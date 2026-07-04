@@ -176,7 +176,8 @@ ax[1].xaxis.set_major_locator(mdates.HourLocator(interval=24))
 ax[1].xaxis.set_minor_locator(mdates.HourLocator(interval=12))
 ax[1].set_xlim([start_time, end_time])
 fg.suptitle(
-    "%s (%s): temperature, pressure, and relative humidity" % (station_name, station_name_4chars)
+    "%s (%s): temperature, pressure, and relative humidity"
+    % (station_name, station_name_4chars),
     fontsize=16,
     fontweight="bold",
 )
@@ -266,10 +267,10 @@ ax[1].xaxis.set_major_locator(mdates.MonthLocator(interval=6))
 ax[1].xaxis.set_minor_locator(mdates.MonthLocator(interval=1))
 ax[1].set_xlim([start_time, end_time])
 fg.suptitle(
-    "%s (%s): temperature, pressure, and relative humidity" % (station_name, station_name_4chars)
+    "%s (%s): temperature, pressure, and relative humidity"
+    % (station_name, station_name_4chars),
     fontsize=16,
     fontweight="bold",
 )
 fg.savefig("%s/%s_TempP_all.png" % (output_path, file_prefix), dpi=300)
 plt.close(fg)
-
