@@ -5,3 +5,6 @@ magick -quality 99 -density 300 UP_400x_logo.png Kenya_Electricity_Generating_Co
 magick centralKenya_withredrectangle.png -resize 1200x centralKenya_withredrectangle2.jpg
 magick 3logos_400x.jpg -resize 1200x 3logos_1200x.jpg
 magick -quality 99 -density 300 3logos_1200x.jpg centralKenya_withredrectangle2.jpg -fuzz 1% -trim -bordercolor white -border 0x10 +repage -gravity center -append 3Logo_map_OGRE.jpg
+magick 3Logo_map_OGRE.jpg -resize 600x 3Logo_map_OGRE.jpg
+rm 3logos_400x.jpg
+rm centralKenya_withredrectangle2.jpg
