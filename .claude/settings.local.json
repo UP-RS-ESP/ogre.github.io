@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle --version)",
+      "Bash(bundle exec *)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(ruby -ryaml *)"
+    ]
+  }
+}
