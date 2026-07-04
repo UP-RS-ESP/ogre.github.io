@@ -11,6 +11,7 @@ stations1:
     url: '/ClimData/01_Olkaria1AU_TempP_last10days.png'
     btn_label: "OK01 Olkaria 1AU"
   - image_path: /ClimData/02_Geolab_TempP_last10days.png
+    alt: OK02-Geolab
     btn_label: OK02 KenGen Geolab
     url: '/ClimData/02_Geolab_TempP_last10days.png'
   - image_path: /ClimData/03_OW914_TempP_last10days.png
@@ -20,11 +21,11 @@ stations1:
 stations2:
   - image_path: /ClimData/05_OW730_TempP_last10days.png
     alt: OK05-OW730
-    btn_label: "OK04 Well 730"
+    btn_label: "OK05 Well 730"
     url: '/ClimData/05_OW730_TempP_last10days.png'
   - image_path: /ClimData/06_OW52_TempP_last10days.png
     btn_label: "OK06 Well 52"
-    alt: OK06-OW52
+    alt: OK06-OW52
     url: '/ClimData/06_OW52_TempP_last10days.png'
   - image_path: /ClimData/07_DinnerClub_TempP_last10days.png
     alt: OK07-KenGen-DinnerClub
@@ -40,7 +41,7 @@ stations3:
     btn_label: "OK09 Naivasha"
     url: '/ClimData/09_Naivasha_TempP_last10days.png'
   - image_path: /ClimData/10_TUKN_TempP_last10days.png
-    alt: TUKN-TechincalUniversity
+    alt: TUKN-TechnicalUniversity
     btn_label: "TUKN Technical University of Kenya, Nairobi"
     url: '/ClimData/10_TUKN_TempP_last10days.png'
 stations4:
@@ -58,11 +59,11 @@ stations4:
 stations5:
   - image_path: /ClimData/05_OW730_TempP_all.png
     alt: OK05-OW730
-    btn_label: "OK04 Well 730"
+    btn_label: "OK05 Well 730"
     url: '/ClimData/05_OW730_TempP_all.png'
   - image_path: /ClimData/06_OW52_TempP_all.png
     btn_label: "OK06 Well 52"
-    alt: OK06-OW52
+    alt: OK06-OW52
     url: '/ClimData/06_OW52_TempP_all.png'
   - image_path: /ClimData/07_DinnerClub_TempP_all.png
     alt: OK07-KenGen-DinnerClub
@@ -78,7 +79,7 @@ stations6:
     btn_label: "OK09 Naivasha"
     url: '/ClimData/09_Naivasha_TempP_all.png'
   - image_path: /ClimData/10_TUKN_TempP_all.png
-    alt: TUKN-TechincalUniversity
+    alt: TUKN-TechnicalUniversity
     btn_label: "TUKN Technical University of Kenya, Nairobi"
     url: '/ClimData/10_TUKN_TempP_all.png'
 ---

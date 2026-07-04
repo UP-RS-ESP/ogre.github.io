@@ -6,50 +6,49 @@ layout: splash
 entries_layout: grid
 classes: wide
 stations1:
-  - image_path: /images/KenGen_GNSS_site1.jpg
-    alt: OK01
-    btn_label: OK01
-    url: '/images/KenGen_GNSS_site1.jpg'
-  - image_path: /images/KenGen_GNSS_site2.jpg
-    alt: NPA2 Trishuli 3A Dam Site
-    btn_label: NPA2 Trishuli 3A Dam Site
-    url: '/images/KenGen_GNSS_site2.jpg'
-  - image_path: /images/npa3_setup_lr.jpg
-    alt: NPA3 Sanjen Hydropower
-    btn_label: NPA3 Sanjen Hydropower
-    url: '/images/npa3_setup_lr.jpg'
+  - image_path: /images/OK01.jpg
+    alt: OK01-Olkaria1AU
+    btn_label: "OK01 Olkaria 1AU"
+    url: '/images/OK01.jpg'
+  - image_path: /images/OK02.jpg
+    alt: OK02-Geolab
+    btn_label: OK02 KenGen Geolab
+    url: '/images/OK02.jpg'
+  - image_path: /images/OK03.jpg
+    alt: OK03-OW914
+    btn_label: "OK03 Well 914"
+    url: '/images/OK03.jpg'
 stations2:
-  - image_path: /images/npa4_setup_lr.jpg
-    alt: NPA4 Chilime Hydropower Station
-    btn_label: NPA4 Chilime Hydropower Station
-    url: '/images/npa4_setup_lr.jpg'
-  - image_path: /images/npa5_setup3_lr.jpg
-    alt: NPA5 Dhunche Nepal Electricity Authority
-    btn_label: NPA5 Dhunche Nepal Electricity Authority
-    url: '/images/npa5_setup3_lr.jpg'
-  - image_path: /images/npa6_setup_lr.jpg
-    alt: NPA6 Sanjen Hydropower Headwater
-    btn_label: NPA6 Sanjen Hydropower Headwater
-    url: '/images/npa6_setup_lr.jpg'
+  - image_path: /images/OK04.jpg
+    alt: OK04-OW907
+    btn_label: "OK04 Well 907"
+    url: '/images/OK04.jpg'
+  - image_path: /images/OK05.jpg
+    alt: OK05-OW730
+    btn_label: "OK05 Well 730"
+    url: '/images/OK05.jpg'
+  - image_path: /images/OK06.jpg
+    btn_label: "OK06 Well 52"
+    alt: OK06-OW52
+    url: '/images/OK06.jpg'
 stations3:
-  - image_path: /images/npa7_setup_lr.jpg
-    alt: NPA7 Trishuli 3A Power House
-    btn_label: NPA7 Trishuli 3A Power House
-    url: '/images/npa7_setup_lr.jpg'
+  - image_path: /images/OK07.jpg
+    alt: OK07-KenGen-DinnerClub
+    btn_label: "OK07 KenGen Dinner Club"
+    url: '/images/OK07.jpg'
+  - image_path: /images/OK08.jpg
+    alt: OK08-Olomayiana
+    btn_label: "OK08 Olomayiana"
+    url: '/images/OK08.jpg'
+  - image_path: /images/OK09.jpg
+    alt: OK09-Naivasha
+    btn_label: "OK09 Naivasha"
+    url: '/images/OK09.jpg'
 stations4:
-  - image_path: /images/Chilime_lr.jpg
-    alt: Chilime River Station
-    btn_label: Chilime River Station
-    url: '/images/Chilime_lr.jpg'
-  - image_path: /images/Langtang_lr.jpg
-    alt: Langtang River Station
-    btn_label: Langtang River Station
-    url: '/images/Langtang_lr.jpg'
-  - image_path: /images/UpperSanjen2B_lr.jpg
-    alt: Sanjen Hydropower Headwater River Station
-    btn_label: Sanjen Hydropower Headwater River Station
-    url: '/images/UpperSanjen2B_lr.jpg'
-
+  - image_path: /images/TUKN.jpg
+    alt: TUKN-TechnicalUniversity
+    btn_label: "TUKN Technical University of Kenya, Nairobi"
+    url: '/images/TUKN.jpg'
 
 ---
 

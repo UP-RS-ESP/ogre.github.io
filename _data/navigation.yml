@@ -6,9 +6,6 @@ main:
   - title: "GNSS"
     url: /GNSSData/
 
-  - title: "River"
-    url: /RiverData/
-
   - title: "Battery Status"
     url: /BatteryStatus/
 
