@@ -45,10 +45,10 @@ stations3:
     btn_label: "OK09 Naivasha"
     url: '/images/OK09.jpg'
 stations4:
-  - image_path: /images/TUKN.jpg
+  - image_path: /images/TUKN_3.jpg
     alt: TUKN-TechnicalUniversity
     btn_label: "TUKN Technical University of Kenya, Nairobi"
-    url: '/images/TUKN.jpg'
+    url: '/images/TUKN_3.jpg'
 
 ---
 
