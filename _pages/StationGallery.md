@@ -14,10 +14,10 @@ stations1:
     alt: OK02-Geolab
     btn_label: OK02 KenGen Geolab
     url: '/images/OK02.jpg'
-  - image_path: /images/OK03.jpg
+  - image_path: /images/OK04_question.jpg
     alt: OK03-OW914
     btn_label: "OK03 Well 914"
-    url: '/images/OK03.jpg'
+    url: '/images/OK04_question.jpg'
 stations2:
   - image_path: /images/OK04.jpg
     alt: OK04-OW907
