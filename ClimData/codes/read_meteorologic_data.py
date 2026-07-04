@@ -21,6 +21,13 @@ file_prefix = sys.argv[3]
 station_name_4chars = sys.argv[4]
 output_path = sys.argv[5]
 
+# testing purposes
+# data_path = "/raid/kenya/ogre/clim_data/ok01/"
+# station_name = "Olkaria 1 AU"
+# file_prefix = "01_Olkaria1AU"
+# station_name_4chars = "OK01"
+# output_path = "/raid/kenya/ogre.github.io/ClimData/"
+
 filelist1 = glob.glob(os.path.join(data_path, "*/*.gz"))
 filelist2 = glob.glob(os.path.join(data_path, "*.gz"))
 filelist = filelist1 + filelist2
@@ -79,33 +86,33 @@ df_all.to_csv(
 )
 
 # Prepare data for plotting
-
 df_all = df_all.resample("1Min").mean()
+df_all_1hour = df_all.resample("60Min").mean()
+df_all_1hour["rh_24h_rolling_average"] = df_all_1hour["rh"].rolling("24h").mean()
+df_all_1hour["P_hpa_24h_rolling_average"] = df_all_1hour["P_hpa"].rolling("24h").mean()
+df_all_1hour["T1_C_24h_rolling_average"] = df_all_1hour["T1_C"].rolling("24h").mean()
+df_all_1hour["T2_C_24h_rolling_average"] = df_all_1hour["T2_C"].rolling("24h").mean()
 
 fg, ax = plt.subplots(
     nrows=2, ncols=1, figsize=(12, 10), dpi=300, layout="constrained", sharex=True
 )
-ax[0].errorbar(
-    x=df_all.index,
-    y=df_all["T1_C"],
-    yerr=df_all["T1_C_sd"],
+ax[0].plot(
+    df_all_1hour.index,
+    df_all_1hour["T1_C_24h_rolling_average"],
+    marker="",
     linestyle="-",
-    marker="o",
-    ms=1,
     lw=0.5,
     color="navy",
-    label="T1 (outside)",
+    label="T1 (outside) 24-hr rolling mean",
 )
-ax[0].errorbar(
-    x=df_all.index,
-    y=df_all["T2_C"],
-    yerr=df_all["T2_C_sd"],
-    linestyle="",
-    marker="o",
-    ms=1,
+ax[0].plot(
+    df_all_1hour.index,
+    df_all_1hour["T2_C_24h_rolling_average"],
+    linestyle="-",
+    marker="",
     lw=0.5,
     color="darkred",
-    label="T2 (inside)",
+    label="T2 (inside) 24-hr rolling mean",
 )
 ax[0].grid()
 ax[0].set_ylabel(r"Temperature ($^\circ$C)", fontsize=14, fontweight="bold")
@@ -117,39 +124,39 @@ ax[0].xaxis.set_major_locator(mdates.MonthLocator(interval=6))
 ax[0].xaxis.set_minor_locator(mdates.MonthLocator(interval=1))
 ax1b = ax[1].twinx()
 lns1 = ax[1].errorbar(
-    x=df_all.index,
-    y=df_all["P_hpa"],
-    yerr=df_all["P_hpa_sd"],
+    x=df_all_1hour.index,
+    y=df_all_1hour["P_hpa"],
+    yerr=df_all_1hour["P_hpa_sd"],
     linestyle="",
-    lw=0.5,
+    lw=0.1,
     color="lightgreen",
 )
-lns2 = ax1b.errorbar(
-    x=df_all.index,
-    y=df_all["rh"],
-    yerr=df_all["rh_sd"],
-    linestyle="",
+# lns2 = ax1b.errorbar(
+#     x=df_all_1hour.index,
+#     y=df_all_1hour["rh"],
+#     yerr=df_all_1hour["rh_sd"],
+#     linestyle="",
+#     lw=0.2,
+#     color="violet",
+# )
+ax1b.plot(
+    df_all_1hour.index,
+    df_all_1hour["rh_24h_rolling_average"],
+    marker="",
+    linestyle="-",
     lw=0.5,
-    color="violet",
+    color="purple",
+    label="Rel. Humidity, 24-hr rolling mean",
 )
-# ax1b.plot(
-#     df_all.index,
-#     df_all["rh_30m_rolling_average"],
-#     marker="o",
-#     ms=1,
-#     linestyle="",
-#     color="purple",
-#     label="Rel. Humidity, 30-min rolling mean",
-# )
-# ax[1].plot(
-#     df_all.index,
-#     df_all["P_hpa_30m_rolling_average"],
-#     marker="o",
-#     ms=1,
-#     linestyle="",
-#     color="darkgreen",
-#     label="Pressure, 30-min rolling mean",
-# )
+ax[1].plot(
+    df_all_1hour.index,
+    df_all_1hour["P_hpa_24h_rolling_average"],
+    marker="",
+    lw=0.5,
+    linestyle="-",
+    color="darkgreen",
+    label="Pressure, 24-hr rolling mean",
+)
 ax1b.set_ylim([0, 100])
 ax[1].grid()
 ax[1].set_xlabel("Year-Month (GMT)", fontsize=14, fontweight="bold")
