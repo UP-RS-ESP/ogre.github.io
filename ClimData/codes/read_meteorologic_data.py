@@ -79,10 +79,7 @@ df_all.to_csv(
 )
 
 # Prepare data for plotting
-start_time = np.max(df_all.index) - np.timedelta64(10, "D")
-start_time.replace(hour=0, minute=0, second=0, microsecond=0)
-end_time = np.max(df_all.index)
-end_time.replace(hour=23, minute=59, second=59, microsecond=0)
+
 df_all = df_all.resample("1Min").mean()
 
 fg, ax = plt.subplots(
@@ -135,24 +132,24 @@ lns2 = ax1b.errorbar(
     lw=0.5,
     color="violet",
 )
-ax1b.plot(
-    df_all.index,
-    df_all["rh_30m_rolling_average"],
-    marker="o",
-    ms=1,
-    linestyle="",
-    color="purple",
-    label="Rel. Humidity, 30-min rolling mean",
-)
-ax[1].plot(
-    df_all.index,
-    df_all["P_hpa_30m_rolling_average"],
-    marker="o",
-    ms=1,
-    linestyle="",
-    color="darkgreen",
-    label="Pressure, 30-min rolling mean",
-)
+# ax1b.plot(
+#     df_all.index,
+#     df_all["rh_30m_rolling_average"],
+#     marker="o",
+#     ms=1,
+#     linestyle="",
+#     color="purple",
+#     label="Rel. Humidity, 30-min rolling mean",
+# )
+# ax[1].plot(
+#     df_all.index,
+#     df_all["P_hpa_30m_rolling_average"],
+#     marker="o",
+#     ms=1,
+#     linestyle="",
+#     color="darkgreen",
+#     label="Pressure, 30-min rolling mean",
+# )
 ax1b.set_ylim([0, 100])
 ax[1].grid()
 ax[1].set_xlabel("Year-Month (GMT)", fontsize=14, fontweight="bold")
@@ -174,6 +171,10 @@ fg.suptitle(
 fg.savefig("%s/%s_TempP_all.png" % (output_path, file_prefix), dpi=300)
 plt.close(fg)
 
+start_time = np.max(df_all.index) - np.timedelta64(10, "D")
+start_time.replace(hour=0, minute=0, second=0, microsecond=0)
+end_time = np.max(df_all.index)
+end_time.replace(hour=23, minute=59, second=59, microsecond=0)
 mask = (df_all.index > start_time) & (df_all.index <= end_time)
 df_all = df_all.loc[mask]
 df_all["rh_30m_rolling_average"] = df_all["rh"].rolling("30Min").mean()
