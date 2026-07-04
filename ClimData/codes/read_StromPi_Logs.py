@@ -190,9 +190,13 @@ def plot_single_StromPiLog():
     for i in range(len(station_name_unique)):
         cstation_name = station_name_unique[i]
         df = df_all[df_all["StationName"] == cstation_name]
-        df["wideV_n"] = (
-            df["wide_V_1h_rolling_average"] / df["wide_V_1h_rolling_average"].mean()
-        )
+        norm_factor = df["wide_V_1h_rolling_average"].mean()
+        if norm_factor < 10:
+            norm_factor = 13
+        df["wideV_n"] = df["wide_V_1h_rolling_average"] / norm_factor
+        df.loc[df["wideV_n"] > 1.5] = np.nan
+        # print(i, df["wide_V_1h_rolling_average"].mean())
+        # print(i, df["wideV_n"].max())
         ax1.plot(
             df.index,
             df["wideV_n"] + i,
@@ -286,7 +290,9 @@ def plot_single_StromPiLog():
 
 
 log_paths = sys.argv[1]
+# log_paths = "/raid/kenya/ogre/prt_data"
 data_paths = "ok01,ok02,ok03,ok04,ok05,ok06,ok07,ok08,ok09,tukn"
+data_paths = "ok01,ok02,ok04,ok05,ok06,ok08,ok09,tukn"
 data_path_single = data_paths.split(",")
 station_name = []
 filelists = []
