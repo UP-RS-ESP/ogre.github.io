@@ -286,7 +286,7 @@ def plot_single_StromPiLog():
 
 
 log_paths = sys.argv[1]
-data_paths = "npa1,npa4,npa5,npa6,npa7"
+data_paths = "ok01,ok02,ok03,ok04,ok05,ok06,ok07,ok08,ok09,tukn"
 data_path_single = data_paths.split(",")
 station_name = []
 filelists = []
