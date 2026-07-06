@@ -14,14 +14,15 @@ header:
   caption: "Photo credit: [Bodo Bookhagen](https://bodobookhagen.github.io/)"
 ---
 
-The *Olkaria Geodetic Rift Experiment* (OGRE) is a set of geodetic stations (continuous GNSS) and meteorological stations located in the East African Rift System in Kenya. The scientific stations are installed in the Olkaria region south of Lake Naivasha and at the Technical University of Kenya in Nairobi. At present, 10 geodetic stations are in operation, with the first one established in May 2024. The stations were installed under the auspices of the [University of Potsdam](https://up-rs-esp.github.io/) and in collaboration with [KenGen](https://www.kengen.co.ke/) and the [Technical University of Kenya in Nairobi](https://tukenya.ac.ke/).
+The *Olkaria Geodetic Rift Experiment* (OGRE) is an advanced network of continuous GNSS (Global Navigation Satellite System) and meteorological stations situated within Kenya’s East African Rift System. Launched in May 2024, the network currently operates 10 active scientific stations strategically located across the Olkaria region (south of Lake Naivasha) and at the Technical University of Kenya in Nairobi.
 
-The OGRE network serves several scientific purposes:
-  - GNSS measurements are processed to estimate integrated water vapor, enabling the study of three-dimensional water-vapor transport.
-  - The water-vapor measurements to enhance and correct InSAR measurements of the Olkaria Geothermal Complex.
-  - Deformation measurements to understand geothermal dynamics.
-  - High-resolution meteorological observations are used to capture and analyze rapid weather variations.
+OGRE is led by the [University of Potsdam](https://up-rs-esp.github.io/) and in collaboration with [KenGen](https://www.kengen.co.ke/) and the [Technical University of Kenya in Nairobi](https://tukenya.ac.ke/).
 
+**Core Scientific Objectives**
+- *Atmospheric Research:* Processing GNSS measurements to estimate integrated water vapor and analyze 3D water-vapor transport.
+- *InSAR Enhancement:* Utilizing water-vapor data to refine and correct InSAR measurements across the Olkaria Geothermal Complex.
+- *Geothermal Monitoring:* Tracking precise deformation measurements to better understand subsurface geothermal dynamics.
+- *Weather Analysis*: Capturing rapid local weather variations using high-resolution meteorological observations.
 
 Contact [Bodo Bookhagen](mailto:bodo.bookhagen@uni-potsdam.de) with questions.
 
