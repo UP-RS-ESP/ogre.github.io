@@ -28,7 +28,7 @@ cd /raid/kenya/ogre.github.io/ClimData/
 python3 /raid/kenya/ogre.github.io/ClimData/codes/read_meteorologic_data.py /raid/kenya/ogre/clim_data/ok08/ "Olomayiana" 08_Olomayiana ok08 /raid/kenya/ogre.github.io/ClimData/
 
 cd /raid/kenya/ogre.github.io/ClimData/
-python3 /raid/kenya/ogre.github.io/ClimData/codes/read_meteorologic_data.py /raid/kenya/ogre/clim_data/ok09/ "Naivasha" 09_Naivasha ok09 /raid/kenya/ogre.github.io/ClimData/
+python3 /raid/kenya/ogre.github.io/ClimData/codes/read_meteorologic_data.py /raid/kenya/ogre/clim_data/ok09/ "Kinamba - Naivasha" 09_Kinamba ok09 /raid/kenya/ogre.github.io/ClimData/
 
 cd /raid/kenya/ogre.github.io/ClimData/
 python3 /raid/kenya/ogre.github.io/ClimData/codes/read_meteorologic_data.py /raid/kenya/ogre/clim_data/tukn/ "Technical University of Kenya, Nairobi" 10_TUKN tukn /raid/kenya/ogre.github.io/ClimData/

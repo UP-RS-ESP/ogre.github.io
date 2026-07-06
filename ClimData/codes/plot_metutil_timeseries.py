@@ -3,6 +3,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib
+import os
 
 matplotlib.use("Agg")
 
@@ -11,9 +12,11 @@ from matplotlib.dates import DateFormatter
 from matplotlib.dates import AutoDateLocator
 import matplotlib.dates as mdates
 from dateutil.tz import gettz
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
 
-plt.rcParams["axes.facecolor"] = "#eeeeee"
-plt.rcParams["figure.facecolor"] = "#eeeeee"
+# plt.rcParams["axes.facecolor"] = "#eeeeee"
+# plt.rcParams["figure.facecolor"] = "#eeeeee"
 
 
 def gnss_zwd_to_pw(zwd, T_s=None, T_m=None):
@@ -178,17 +181,18 @@ def plot_PW(df_single_station, df_single_station_msk, pngfname):
         yerr=df_single_station_msk["Sig_PW"],
         linestyle="",
         lw=0.5,
-        color="lightblue",
+        color="royalblue",
         label="Precipitable Water (VMF1)",
     )
-    ax[0].plot(
-        df_single_station_msk.index,
-        df_single_station_msk["PW_local"],
-        linestyle="-",
-        lw=0.5,
-        color="navy",
-        label="Precipitable Water (local temperature)",
-    )
+    if "PW_local" in df_single_station_msk:
+        ax[0].plot(
+            df_single_station_msk.index,
+            df_single_station_msk["PW_local"],
+            linestyle="-",
+            lw=0.5,
+            color="navy",
+            label="Precipitable Water (local temperature)",
+        )
     ax[0].grid()
     ax[0].set_ylabel(
         "Precipitable Water (mm)", fontsize=14, color="black", fontweight="bold"
@@ -209,18 +213,19 @@ def plot_PW(df_single_station, df_single_station_msk, pngfname):
         marker=".",
         ms=0.2,
         lw=0.5,
-        color="lightblue",
+        color="royalblue",
         label="Precipitable Water (VMF1)",
     )
-    ax[1].plot(
-        df_single_station.index,
-        df_single_station["PW_local"],
-        linestyle="-",
-        marker="",
-        lw=0.3,
-        color="navy",
-        label="Precipitable Water (local temperature)",
-    )
+    if "PW_local" in df_single_station_msk:
+        ax[1].plot(
+            df_single_station.index,
+            df_single_station["PW_local"],
+            linestyle="-",
+            marker="",
+            lw=0.3,
+            color="navy",
+            label="Precipitable Water (local temperature)",
+        )
     # ax[1].fill_between(
     #     df_single_station.index,
     #     df_single_station["Wet_Zen"] - df_single_station["Sig_Zen"],
@@ -254,10 +259,9 @@ if __name__ == "__main__":
 
     # make one file per station with all data
     csv_files = [
-        "Nepal_2023_G_all_stations.csv.bz2",
-        "Nepal_2024_G_all_stations.csv.bz2",
-        "Nepal_2025_G_all_stations.csv.bz2",
-        "Nepal_2026_G_all_stations.csv.bz2",
+        "Olkaria_2024_G_all_stations.csv.bz2",
+        "Olkaria_2025_G_all_stations.csv.bz2",
+        "Olkaria_2026_G_all_stations.csv.bz2",
     ]
     dfs = [pd.read_csv(file) for file in csv_files]
     df = pd.concat(dfs, axis=0, ignore_index=False)
@@ -268,19 +272,19 @@ if __name__ == "__main__":
     for i in range(len(unique_stations)):
         station_name = unique_stations[i]
         print(station_name)
-        if (
-            station_name != "NPA1"
-            and station_name != "NPA2"
-            and station_name != "NPA3"
-            and station_name != "NPA4"
-            and station_name != "NPA5"
-            and station_name != "NPA6"
-            and station_name != "NPA7"
-        ):
-            continue
-        if station_name == "NPA1" or station_name == "NPA5":
-            # will need to merge climate data for station NPA1 (old and new climate data)
-            continue
+        # if (
+        #     station_name != "OK01"
+        #     and station_name != "OK02"
+        #     and station_name != "OK03"
+        #     and station_name != "OK04"
+        #     and station_name != "OK05"
+        #     and station_name != "OK06"
+        #     and station_name != "OK07"
+        # ):
+        #     continue
+        # if station_name == "NPA1" or station_name == "NPA5":
+        #     # will need to merge climate data for station NPA1 (old and new climate data)
+        #     continue
         df_single_station = df[df.Name == station_name]
         # remove negative zenith wet delay
         df_single_station2 = df_single_station.drop(
@@ -289,27 +293,31 @@ if __name__ == "__main__":
         df_single_station = df_single_station2.groupby(level=0).mean(numeric_only=True)
         df_single_station2 = None
         df_single_station = df_single_station.asfreq("h").reindex()
+
+        # If s_meteorologic_data exists, load:
         # Load in T data from met station and calculate PW from local climate data
         #
         metdata_fname = "%s_meteorologic_data.csv.bz2" % station_name
-        df_met = pd.read_csv(metdata_fname)
-        df_met["date"] = pd.to_datetime(df_met["date"], format="ISO8601")
-        df_met = df_met.set_index("date")
-        df_met2 = df_met.groupby(level=0).mean(numeric_only=True)
-        df_met = df_met2.resample("1h").mean()
-        df_met2 = None
-        df_merged = pd.merge(
-            df_single_station, df_met, left_index=True, right_index=True
-        )
-        if "T1_C" in df_merged.columns:
-            # rename outside temperature to T_C for calculation
-            df_merged.rename(columns={"T1_C": "T_C"}, inplace=True)
-        df_merged["PW_local"] = gnss_zwd_to_pw(
-            df_merged["Wet_Zen"] * 100, T_s=df_merged["T_C"], T_m=None
-        )
-        outfile_fn = "G_ZWD"
-        df_single_station.to_csv(outfile_fn + "_%s.csv.bz2" % station_name)
-        # df_single_station.to_hdf(outfile_fn + "_%s.hdf" % station_name, key="metutil")
+        if os.path.exists(metdata_fname):
+            df_met = pd.read_csv(metdata_fname)
+            df_met["date"] = pd.to_datetime(df_met["date"], format="ISO8601")
+            df_met = df_met.set_index("date")
+            df_met2 = df_met.groupby(level=0).mean(numeric_only=True)
+            df_met = df_met2.resample("1h").mean()
+            df_met2 = None
+            df_merged = pd.merge(
+                df_single_station, df_met, left_index=True, right_index=True
+            )
+            if "T1_C" in df_merged.columns:
+                # rename outside temperature to T_C for calculation
+                df_merged.rename(columns={"T1_C": "T_C"}, inplace=True)
+            df_merged["PW_local"] = gnss_zwd_to_pw(
+                df_merged["Wet_Zen"] * 100, T_s=df_merged["T_C"], T_m=None
+            )
+            outfile_fn = "G_ZWD"
+            df_single_station.to_csv(outfile_fn + "_%s.csv.bz2" % station_name)
+            # df_single_station.to_hdf(outfile_fn + "_%s.hdf" % station_name, key="metutil")
+        df_merged = df_single_station
         start_time = np.max(df_merged.index) - np.timedelta64(10, "D")
         start_time.replace(hour=0, minute=0, second=0, microsecond=0)
         end_time = np.max(df_merged.index)
