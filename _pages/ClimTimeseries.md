@@ -36,10 +36,10 @@ stations3:
     alt: OK08-Olomayiana
     btn_label: "OK08 Olomayiana"
     url: '/ClimData/08_Olomayiana_TempP_last10days.png'
-  - image_path: /ClimData/09_Naivasha_TempP_last10days.png
-    alt: OK09-Naivasha
-    btn_label: "OK09 Naivasha"
-    url: '/ClimData/09_Naivasha_TempP_last10days.png'
+  - image_path: /ClimData/09_Kinamba_TempP_last10days.png
+    alt: OK09-Kinamba
+    btn_label: "OK09 Kinamba - Naivasha"
+    url: '/ClimData/09_Kinamba_TempP_last10days.png'
   - image_path: /ClimData/10_TUKN_TempP_last10days.png
     alt: TUKN-TechnicalUniversity
     btn_label: "TUKN Technical University of Kenya, Nairobi"
@@ -74,10 +74,10 @@ stations6:
     alt: OK08-Olomayiana
     btn_label: "OK08 Olomayiana"
     url: '/ClimData/08_Olomayiana_TempP_all.png'
-  - image_path: /ClimData/09_Naivasha_TempP_all.png
-    alt: OK09-Naivasha
-    btn_label: "OK09 Naivasha"
-    url: '/ClimData/09_Naivasha_TempP_all.png'
+  - image_path: /ClimData/09_Kinamba_TempP_all.png
+    alt: OK09-Kinamba
+    btn_label: "OK09 Kinamba-Naivasha"
+    url: '/ClimData/09_Kinamba_TempP_all.png'
   - image_path: /ClimData/10_TUKN_TempP_all.png
     alt: TUKN-TechnicalUniversity
     btn_label: "TUKN Technical University of Kenya, Nairobi"
