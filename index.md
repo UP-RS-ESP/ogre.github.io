@@ -14,8 +14,6 @@ header:
   caption: "Photo credit: [Bodo Bookhagen](https://bodobookhagen.github.io/)"
 ---
 
-![image](/images/3Logo_map_OGRE.jpg)
-
 The *Olkaria Geodetic Rift Experiment* (OGRE) is a set of geodetic stations (continuous GNSS) and meteorological stations located in the East African Rift System in Kenya. The scientific stations are installed in the Olkaria region south of Lake Naivasha and at the Technical University of Kenya in Nairobi. At present, 10 geodetic stations are in operation, with the first one established in May 2024. The stations were installed under the auspices of the [University of Potsdam](https://up-rs-esp.github.io/) and in collaboration with [KenGen](https://www.kengen.co.ke/) and the [Technical University of Kenya in Nairobi](https://tukenya.ac.ke/).
 
 The OGRE network serves several scientific purposes:
@@ -26,3 +24,6 @@ The OGRE network serves several scientific purposes:
 
 
 Contact [Bodo Bookhagen](mailto:bodo.bookhagen@uni-potsdam.de) with questions.
+
+![image](/images/3Logo_map_OGRE.jpg)
+
